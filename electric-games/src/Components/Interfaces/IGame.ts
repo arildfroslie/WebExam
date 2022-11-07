@@ -1,8 +1,12 @@
 interface IGame {
-    id: number;
-    title: string;
-    platform: string;
-    releaseDate: string;
+    Id: number;
+    Name: string;
+    Image: string;
+    Platform: string;
+    Genre: string;
+    ReleaseDate: string;
+    Price: string;
+    Rating: string;
 }
 
 export default IGame;

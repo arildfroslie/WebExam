@@ -1,8 +1,9 @@
 interface ICharacters {
-    id: number;
-    name: string;
-    game: string;
-    description: string;
+    Id: number;
+    Name: string;
+    Image: string;
+    Game: string;
+    Description: string;
 }
 
 export default ICharacters;

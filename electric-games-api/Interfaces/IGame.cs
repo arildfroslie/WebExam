@@ -4,6 +4,7 @@ namespace ElectricGamesApi.Interfaces;
         int Id { get; set; }
         string Name { get; set; }
         string Image { get; set; }
+        string Platform {get; set;}
         string Genre { get; set; }
         string ReleaseDate { get; set; }
         string Price { get; set; }

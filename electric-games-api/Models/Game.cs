@@ -10,6 +10,7 @@ public class Game : IGame
     public string Name { get; set; } = null!;
     public string Image { get; set; } = null!;
     public string Genre { get; set; } = null!;
+    public string Platform { get; set; } = null!;
     public string Developer { get; set; } = null!;
     public string ReleaseDate { get; set; } = null!;
     public string Price { get; set; } = null!;

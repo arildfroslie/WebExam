@@ -6,21 +6,20 @@ namespace ElectricGamesApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-
-public class GameCharacterController : ControllerBase
+public class GamePlatformController : ControllerBase
 
 {
     private readonly ElectricGamesContext context;
 
-    public GameCharacterController(ElectricGamesContext _context)
+    public GamePlatformController(ElectricGamesContext _context)
     {
         context = _context;
     }
 
     [HttpGet]
-    public async Task<List<GameCharacter>> Get()
+    public async Task<List<GamePlatform>> Get()
     {
-        List<GameCharacter> gameCharacters = await context.GameCharacters.ToListAsync();
-        return gameCharacters;
+        List<GamePlatform> gamePlatforms = await context.GamePlatforms.ToListAsync();
+        return gamePlatforms;
     }
 }

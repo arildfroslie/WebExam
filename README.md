@@ -12,7 +12,6 @@ Tommy, Maria og Arild.
     - Game page
         - Id,
         - Title,
-        - Game (her må vi kanskje bruke ID for å koble spill med respektive karakterer),
         - Platform,
         - Release Date,
         - Image,

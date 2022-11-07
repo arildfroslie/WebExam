@@ -9,4 +9,5 @@ public class ElectricGamesContext : DbContext
 
     public DbSet<Game> Games { get; set; }
     public DbSet<GameCharacter> GameCharacters { get; set; }
+    public DbSet<GamePlatform> GamePlatforms { get; set; }
 }

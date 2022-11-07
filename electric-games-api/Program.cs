@@ -1,5 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using ElectricGamesApi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<ElectricGamesContext>(
+    options => options.UseSqlite("Data Source=electric-games.db")
+);
 // Add services to the container.
 
 builder.Services.AddControllers();

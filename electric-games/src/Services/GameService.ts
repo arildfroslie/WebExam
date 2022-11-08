@@ -7,7 +7,7 @@ const GameService = (
             "Game": "https://localhost:7119/Game/{id}",
         }
     
-        const getAllGames = async () => { 
+        const getGames = async () => { 
             const response = await axios.get(endpoints.Games);
             return response.data.results;
         }
@@ -33,7 +33,7 @@ const GameService = (
         }
     
         return {
-            getAllGames,
+            getGames,
             getGameById,
             createGame,
             updateGame,

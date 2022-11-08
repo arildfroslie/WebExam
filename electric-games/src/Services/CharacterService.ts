@@ -7,7 +7,7 @@ const CharacterService = (
             "character": "https://localhost:7119/Character/{id}",
         }
     
-        const getAllCharacters = async () => { 
+        const getCharacters = async () => { 
             const response = await axios.get(endpoints.characters);
             return response.data.results;
         }
@@ -33,7 +33,7 @@ const CharacterService = (
         }
     
         return {
-            getAllCharacters,
+            getCharacters,
             getCharacterById,
             createCharacter,
             updateCharacter,

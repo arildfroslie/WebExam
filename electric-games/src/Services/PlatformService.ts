@@ -7,7 +7,7 @@ const platformService = (
             "platform": "https://localhost:7119/Platform/{id}",
         }
     
-        const getAllPlatforms = async () => { 
+        const getPlatforms = async () => { 
             const response = await axios.get(endpoints.platforms);
             return response.data.results;
         }
@@ -33,7 +33,7 @@ const platformService = (
         }
     
         return {
-            getAllPlatforms,
+            getPlatforms,
             getPlatformById,
             createPlatform,
             updatePlatform,

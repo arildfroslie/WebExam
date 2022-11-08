@@ -58,4 +58,24 @@ public class GameController : ControllerBase
         await context.SaveChangesAsync();
         return game;
     }
+
+    [HttpPost]
+    public async Task<ActionResult<Game>> Post(Game game)
+    {
+        context.Games.Add(game);
+        await context.SaveChangesAsync();
+        return CreatedAtAction(nameof(Get), new { id = game.Id }, game);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult<Game>> Put(int id, Game game)
+    {
+        if (id != game.Id)
+        {
+            return BadRequest();
+        }
+        context.Entry(game).State = EntityState.Modified;
+        await context.SaveChangesAsync();
+        return NoContent();
+    }
 }

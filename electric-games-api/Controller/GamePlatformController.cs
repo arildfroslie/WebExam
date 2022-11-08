@@ -57,4 +57,25 @@ public class GamePlatformController : ControllerBase
         await context.SaveChangesAsync();
         return gamePlatform;
     }
+
+    [HttpPost]
+    public async Task<ActionResult<GamePlatform>> Post(GamePlatform gamePlatform)
+    {
+        context.GamePlatforms.Add(gamePlatform);
+        await context.SaveChangesAsync();
+        return CreatedAtAction(nameof(Get), new { id = gamePlatform.Id }, gamePlatform);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult<GamePlatform>> Put(int id, GamePlatform gamePlatform)
+    {
+        if (id != gamePlatform.Id)
+        {
+            return BadRequest();
+        }
+        context.Entry(gamePlatform).State = EntityState.Modified;
+        await context.SaveChangesAsync();
+        return NoContent();
+    }   
+
 }

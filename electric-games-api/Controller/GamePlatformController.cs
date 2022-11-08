@@ -44,4 +44,17 @@ public class GamePlatformController : ControllerBase
         }
         return gamePlatform;
     }
+
+    [HttpDelete ("{id}")]
+    public async Task<ActionResult<GamePlatform>> Delete(int id)
+    {
+        GamePlatform? gamePlatform = await context.GamePlatforms.FindAsync(id);
+        if (gamePlatform == null)
+        {
+            return NotFound();
+        }
+        context.GamePlatforms.Remove(gamePlatform);
+        await context.SaveChangesAsync();
+        return gamePlatform;
+    }
 }

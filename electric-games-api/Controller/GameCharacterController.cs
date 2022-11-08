@@ -45,4 +45,19 @@ public class GameCharacterController : ControllerBase
         }
         return gameCharacter;
     }
+
+
+    [HttpDelete ("{id}")]
+    public async Task<ActionResult<GameCharacter>> Delete(int id)
+    {
+        GameCharacter? gameCharacter = await context.GameCharacters.FindAsync(id);
+        if (gameCharacter == null)
+        {
+            return NotFound();
+        }
+        context.GameCharacters.Remove(gameCharacter);
+        await context.SaveChangesAsync();
+        return gameCharacter;
+    }
+
 }

@@ -45,4 +45,17 @@ public class GameController : ControllerBase
         }
         return game;
     }
+
+    [HttpDelete ("{id}")]
+    public async Task<ActionResult<Game>> Delete(int id)
+    {
+        Game? game = await context.Games.FindAsync(id);
+        if (game == null)
+        {
+            return NotFound();
+        }
+        context.Games.Remove(game);
+        await context.SaveChangesAsync();
+        return game;
+    }
 }

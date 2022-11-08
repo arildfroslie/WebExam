@@ -23,4 +23,15 @@ public class GameCharacterController : ControllerBase
         List<GameCharacter> gameCharacters = await context.GameCharacters.ToListAsync();
         return gameCharacters;
     }
+
+    [HttpGet("{id}")] 
+    public async Task<ActionResult<GameCharacter>> Get(int id)
+    {
+        GameCharacter? gameCharacter = await context.GameCharacters.FindAsync(id);
+        if (gameCharacter == null)
+        {
+            return NotFound();
+        }
+        return gameCharacter;
+    }
 }

@@ -23,4 +23,15 @@ public class GameController : ControllerBase
         List<Game> games = await context.Games.ToListAsync();
         return games;
     }
+
+    [HttpGet("{id}")] 
+    public async Task<ActionResult<Game>> Get(int id)
+    {
+        Game? game = await context.Games.FindAsync(id);
+        if (game == null)
+        {
+            return NotFound();
+        }
+        return game;
+    }
 }

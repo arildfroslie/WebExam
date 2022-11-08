@@ -22,4 +22,15 @@ public class GamePlatformController : ControllerBase
         List<GamePlatform> gamePlatforms = await context.GamePlatforms.ToListAsync();
         return gamePlatforms;
     }
+
+    [HttpGet("{id}")] 
+    public async Task<ActionResult<GamePlatform>> Get(int id)
+    {
+        GamePlatform? gamePlatform = await context.GamePlatforms.FindAsync(id);
+        if (gamePlatform == null)
+        {
+            return NotFound();
+        }
+        return gamePlatform;
+    }
 }

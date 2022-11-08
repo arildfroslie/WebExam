@@ -33,4 +33,15 @@ public class GamePlatformController : ControllerBase
         }
         return gamePlatform;
     }
+
+    [HttpGet("{name}")] 
+    public async Task<ActionResult<GamePlatform>> Get(string name)
+    {
+        GamePlatform? gamePlatform = await context.GamePlatforms.FindAsync(name);
+        if (gamePlatform == null)
+        {
+            return NotFound();
+        }
+        return gamePlatform;
+    }
 }

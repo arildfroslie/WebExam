@@ -34,4 +34,15 @@ public class GameCharacterController : ControllerBase
         }
         return gameCharacter;
     }
+    
+    [HttpGet("{name}")] 
+    public async Task<ActionResult<GameCharacter>> Get(string name)
+    {
+        GameCharacter? gameCharacter = await context.GameCharacters.FindAsync(name);
+        if (gameCharacter == null)
+        {
+            return NotFound();
+        }
+        return gameCharacter;
+    }
 }

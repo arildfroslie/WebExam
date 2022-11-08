@@ -77,5 +77,6 @@ public class GamePlatformController : ControllerBase
         await context.SaveChangesAsync();
         return NoContent();
     }   
+    
 
 }

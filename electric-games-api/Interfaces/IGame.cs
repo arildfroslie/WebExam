@@ -7,6 +7,6 @@ namespace ElectricGamesApi.Interfaces;
         string Platform {get; set;}
         string Genre { get; set; }
         string ReleaseDate { get; set; }
-        string Price { get; set; }
+        int Price { get; set; }
         string Rating { get; set; }
     }

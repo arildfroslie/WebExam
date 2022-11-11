@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ElectricGamesApi.Models;
 
-public class GameCharacter : IGameCharacter
+public class Character : ICharacter
 {
     [Key]
     public int Id { get; set; }

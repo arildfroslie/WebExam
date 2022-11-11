@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ElectricGamesApi.Models;
 
-public class GamePlatform : IGamePlatform
+public class Platform : IPlatform
 {
     [Key]
     public int Id { get; set; }

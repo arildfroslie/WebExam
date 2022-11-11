@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Games Api</title>
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<body>      
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo">
+        <a href="index.html">Electric Games</a>
+      </h1>
+      <nav id ="navbar" class="navbar">
+        <ul>
+          <li>
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li>
+            <a class="nav-link" href="games.html">Games</a>
+          </li>
+          <li>
+            <a class="nav-link" href="characters.html">Characters</a>
+          </li>
+          <li>
+            <a class="nav-link" href="platforms.html">Platforms</a>
+          </li>
+        </ul>
+        </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="text-center">
+      <h2>Characters</h2>
+    </div>
+  <section class="schema container">
+    <h3>Character schema</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Id</td>
+          <td>Int</td>
+          <td>The id of the character</td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>String</td>
+          <td>The name of the character</td>
+        </tr>
+        <tr>
+          <td>Image</td>
+          <td>String</td>
+          <td>Image of the character</td>
+        </tr>
+        <tr>
+          <td>Game</td>
+          <td>String</td>
+          <td>The game where the character is from</td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td>String</td>
+          <td>Description of the character</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="container">
+    <h2>Get all characters</h2>
+    <p>You can access the list of characters by using the /character endpoint.</p>
+  </section>
+  <section class="container">
+    <h2>Get a single character</h2>
+    <p>You can get a single character by adding the id as a parameter: /character/{id}</p>
+  </section>
+  <section class="container">
+    <h2>Get multiple characters</h2>
+    <p>You can get multiple characters by adding an array of ids as parameter: /character/[1,2,3] or /character/1,2,3</p>
+  </section>
+  
+  </main>
+    
+  <footer id="footer">
+    <div class="me-md-auto text-center text-md-start">
+      <div class="copyright">
+        © Copyright <strong>Electric Games</strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+</body>
+</html>

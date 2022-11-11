@@ -1,6 +1,6 @@
 namespace ElectricGamesApi.Interfaces
 {
-    public interface IGamePlatform
+    public interface IPlatform
     {
         int Id { get; set; }
         string Name { get; set; }

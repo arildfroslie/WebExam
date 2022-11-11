@@ -1,33 +1,15 @@
-import { Link, Route, Routes, Router, BrowserRouter } from 'react-router-dom';
-import HomePage from './Pages/HomePage';
-import GamePage from './Pages/GamePage';
-import CharacterPage from './Pages/CharacterPage';
-import PlatformPage from './Pages/PlatformPage';
 import './App.css';
+import { HomePage, GamePage, CharacterPage, PlatformPage } from './Pages';
+import { Navbar } from './Components/Navbar/Navbar';
+
+
 
 
 function App() {
   return (
-
-    <div>
-      <BrowserRouter>
-        <nav>
-          <ul className="navbar">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="Games">Games</Link></li>
-            <li><Link to="Characters">Characters</Link></li>
-            <li><Link to="Platforms">Platforms</Link></li>
-          </ul>
-        </nav>
-      
-        <Routes>
-          <Route path="/" element={ <HomePage/> }></Route>
-          <Route path="Games" element={ <GamePage/> }></Route>
-          <Route path="Characters" element={ <CharacterPage/> }></Route>
-          <Route path="Platforms" element={ <PlatformPage/> }></Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <>
+    <Navbar />
+    </>
   );
 }
 

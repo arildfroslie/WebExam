@@ -1,11 +1,3 @@
-.navbar{
-    width: 100%;
-    height: 50px;
-    list-style: none;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
-    margin: 1% auto;
-    background-color: gray;
-    display: grid;
-    justify-content: inline;
-    grid-template-columns: repeat(auto-fit, 25%);
+body{
+    margin: 0;
 }

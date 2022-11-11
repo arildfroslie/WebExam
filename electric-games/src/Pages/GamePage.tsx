@@ -1,8 +1,9 @@
+import GameList from "../Components/Game/GameList";
+
 const GamePage = () => {
     return(
         <section>
-            <h1>Here are our games</h1>
-
+            <GameList />
         </section>
     )
 }

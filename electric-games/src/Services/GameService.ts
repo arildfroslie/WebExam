@@ -3,41 +3,19 @@ import axios from "axios";
 const GameService = (
     () => {
         const endpoints = {
-            "Games": "https://localhost:7119/Game",
-            "Game": "https://localhost:7119/Game/{id}",
+            "Games": "https://localhost:7119/game",
+            "Game": "https://localhost:7119/game/{id}",
         }
     
-        const getGames = async () => { 
+        const getGames = async () => {
             const response = await axios.get(endpoints.Games);
-            return response.data.results;
+            return response.data;
         }
-    
-        const getGameById = async (id: number) => {
-            const response = await axios.get(`${endpoints.Game}/${id}`);
-            return response.data.results;
-        }
-    
-        const createGame = async (Game: any) => {
-            const response = await axios.post(endpoints.Game, Game);
-            return response.data.results;
-        }
-    
-        const updateGame = async (Game: any) => {
-            const response = await axios.put(endpoints.Game, Game);
-            return response.data.results;
-        }
-    
-        const deleteGame = async (id: number) => {
-            const response = await axios.delete(`${endpoints.Game}/${id}`);
-            return response.data.results;
-        }
+
+        console.log(getGames());
     
         return {
             getGames,
-            getGameById,
-            createGame,
-            updateGame,
-            deleteGame
         }
 }
 )();

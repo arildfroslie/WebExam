@@ -9,10 +9,16 @@ builder.Services.AddDbContext<ElectricGamesContext>(
 );
 
 builder.Services.AddCors(
-    options => options.AddDefaultPolicy(
-        builder => builder.AllowAnyOrigin()
-    )
+    options => {
+        options.AddPolicy("AllowAll",
+        builder => builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+        );
+    }
 );
+
 
 
 builder.Services.AddControllers();
@@ -21,6 +27,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.UseCors("AllowAll");
 
 DefaultFilesOptions options = new DefaultFilesOptions();
 options.DefaultFileNames.Add("index.html");

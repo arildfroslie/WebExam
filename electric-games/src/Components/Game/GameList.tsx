@@ -15,6 +15,7 @@ const GameList = () => {
     }, []);
 
     const getGameItems = () => {
+        console.log(Games)
         return Games?.map( (Game, i) => (
             <GameItem 
                 key={`Game-${i}`}

@@ -5,3 +5,11 @@
     align-items: center;
     margin: 2rem;
 }
+.search-bar input{
+    width: 50%;
+    height: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1.5rem 0.5rem;
+    margin: 1rem 0;
+}

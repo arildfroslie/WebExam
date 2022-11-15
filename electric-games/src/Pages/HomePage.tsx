@@ -1,9 +1,9 @@
+import Header from "../components/Header/Header";
+
 const HomePage = () => {
     return (
         <>  
-            <section className="header">
-                <h1 className="header-title">Home</h1>
-            </section>
+            <Header />
         </>
     )
 }

@@ -1,24 +1,31 @@
 import "./SearchFunction.css";
-
+import { ISearch } from "../../interfaces/ISearch";
 import { useState } from "react";
+import { FC } from "react";
 
-const SearchFunction = () => {
+const SearchFunction : FC<ISearch> = ({onChange}) => {
 
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
 
   const handleChange = (event: any) => {
     setSearchTerm(event.target.value);
-
+    
+    if (onChange) {
+      onChange(event.target.value);
+    }
   }
+
   return (
-        <input
-          className="search-bar"
-          type="text"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={handleChange}
-        />
+    <>
+      <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={handleChange}
+          />
+      </div>
+    </>
     );
 }
 

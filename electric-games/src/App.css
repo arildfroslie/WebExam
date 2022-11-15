@@ -6,15 +6,6 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-/* Header style */
-.header-title{    
-    font-size: 2rem;
-    text-align: center;
-}
-
-/* Search and Add style */
-
-
 /* Grid style */
 
 .output-container{
@@ -27,7 +18,7 @@ body{
 
 .game-item{
     grid-column: auto / span 3;
-    border: 2px solid black;
+    border: 2px solid #ccc;
     border-radius: 25px;
     text-align: center;
 }

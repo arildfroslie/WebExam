@@ -1,14 +1,15 @@
 import CharacterList from "../components/Character/CharacterList";
 import SearchFunction from "../components/SearchFunction/SearchFunction";
+import AddFunction from "../components/AddFunction/AddFunction";
+import Header from "../components/Header/Header";
 
 const CharacterPage = () => {
     return(
         <>
-            <section className="header">
-                <h1 className="header-title">Characters</h1>
-                <SearchFunction />
-            </section>
-            <CharacterList />
+            <Header />
+            <SearchFunction />
+            <CharacterList/>
+            <AddFunction />
         </>
     )
 }

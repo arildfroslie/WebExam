@@ -1,14 +1,15 @@
 import PlatformList from "../components/Platform/PlatformList";
 import SearchFunction from "../components/SearchFunction/SearchFunction";
+import AddFunction from "../components/AddFunction/AddFunction";
+import Header from "../components/Header/Header";
 
 const PlatformPage = () => {
     return(
         <>
-            <section className="header">
-                <h1 className="header-title">Platforms</h1>
-                <SearchFunction />
-            </section>
+            <Header />
+            <SearchFunction />
             <PlatformList />
+            <AddFunction />
         </>
     )
 }

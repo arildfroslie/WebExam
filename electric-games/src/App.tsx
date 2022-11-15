@@ -1,6 +1,6 @@
 import './App.css';
-import { HomePage, GamePage, CharacterPage, PlatformPage } from './Pages';
-import { Navbar } from './Components/Navbar/Navbar';
+import { HomePage, GamePage, CharacterPage, PlatformPage } from './pages';
+import {Navbar} from './components/Navbar/Navbar';
 
 
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import PlatformItem from "./PlatformItem";
-import PlatformService from "../../Services/PlatformService";
+import PlatformService from "../../services/PlatformService";
 import IPlatform from "../../interfaces/IPlatform";
 
 const PlatformList = () => {
@@ -15,6 +15,7 @@ const PlatformList = () => {
     }, []);
 
     const getPlatformItems = () => {
+        console.log(Platforms);
         return Platforms?.map( (Platform, i) => (
             <PlatformItem 
                 key={`Platform-${i}`}
@@ -27,10 +28,7 @@ const PlatformList = () => {
     }
 
     return(
-        <section>
-            <h1>Her kommer Platforms</h1>
-            <section>{ getPlatformItems() }</section>
-        </section>
+        <section className="output-container">{ getPlatformItems() }</section>
     )
 };
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import GameItem from "./GameItem";
-import GameService from "../../Services/GameService";
+import GameService from "../../services/GameService";
 import IGame from "../../interfaces/IGame";
 
 const GameList = () => {
@@ -14,6 +14,7 @@ const GameList = () => {
         fetchGames();
     }, []);
 
+
     const getGameItems = () => {
         console.log(Games)
         return Games?.map( (Game, i) => (
@@ -24,18 +25,14 @@ const GameList = () => {
                 image={Game.image}
                 platform={Game.platform}
                 genre={Game.genre}
-                releaseDate={Game.releaseDate}
-                price={Game.price}
                 rating={Game.rating}
                 />
         ) )
     }
 
+
     return(
-        <section>
-            <h1>Her kommer Games</h1>
-            <section>{ getGameItems() }</section>
-        </section>
+        <section className="output-container">{ getGameItems() }</section>
     )
 };
 

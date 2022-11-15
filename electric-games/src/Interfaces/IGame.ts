@@ -4,8 +4,6 @@ interface IGame {
     image: string;
     platform: string;
     genre: string;
-    releaseDate: string;
-    price: string;
     rating: string;
 }
 

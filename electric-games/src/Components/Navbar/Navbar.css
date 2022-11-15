@@ -32,10 +32,6 @@
     padding: .25rem;
 }
 
-.nav li.hover{
+.nav li:hover{
     background-color: #777;
-}
-
-.nav li.active{
-    background-color: #555;
 }

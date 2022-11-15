@@ -1,9 +1,15 @@
+import PlatformList from "../components/Platform/PlatformList";
+import SearchFunction from "../components/SearchFunction/SearchFunction";
+
 const PlatformPage = () => {
     return(
-        <section>
-            <h1>Explore games by their platform</h1>
-
-        </section>
+        <>
+            <section className="header">
+                <h1 className="header-title">Platforms</h1>
+                <SearchFunction />
+            </section>
+            <PlatformList />
+        </>
     )
 }
 

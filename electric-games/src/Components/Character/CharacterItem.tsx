@@ -3,8 +3,8 @@ import ICharacter from "../../interfaces/ICharacter";
 
 const CharacterItem: FC<ICharacter> = ({id, name, image, game, description }) => {
     return (
-        <article>
-        <h3>{name} ({id})</h3>
+        <article className="character-item">
+        <h3>{name}</h3>
         <img src={image} alt={name} />
         <p>{game}</p>
         <p>{description}</p>

@@ -12,7 +12,10 @@ const GameService = (
             return response.data;
         }
 
-        console.log(getGames());
+        const getGamesById = async (id: number) => {
+            const response = await axios.get(endpoints.Game.replace("{id}", id.toString()));
+            return response.data;
+        }
     
         return {
             getGames,

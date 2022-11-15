@@ -8,18 +8,16 @@ builder.Services.AddDbContext<ElectricGamesContext>(
     options => options.UseSqlite("Data Source=electric-games.db")
 );
 
-builder.Services.AddCors(
-    options => {
-        options.AddPolicy("AllowAll",
-        builder => builder
-            .AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader()
-        );
-    }
-);
-
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin();
+            builder.AllowAnyMethod();
+            builder.AllowAnyHeader();
+        });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -27,7 +25,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-app.UseCors("AllowAll");
+app.UseCors("AllowAllOrigins");
 
 DefaultFilesOptions options = new DefaultFilesOptions();
 options.DefaultFileNames.Add("index.html");

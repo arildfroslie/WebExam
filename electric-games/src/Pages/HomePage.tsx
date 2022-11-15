@@ -1,7 +1,9 @@
 const HomePage = () => {
     return (
-        <>
-            <h1>Home Page</h1>
+        <>  
+            <section className="header">
+                <h1 className="header-title">Home</h1>
+            </section>
         </>
     )
 }

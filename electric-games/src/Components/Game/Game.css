@@ -1,0 +1,12 @@
+.game-image{
+    width: 75%;
+    height: 40%;
+    border-radius: 2rem;
+}
+
+.game-item{
+    grid-column: auto / span 3;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    text-align: center;
+}

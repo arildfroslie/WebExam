@@ -13,29 +13,11 @@ body{
     justify-content: center;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 1rem;
-    margin: 2rem;
-}
-
-.game-item{
-    grid-column: auto / span 3;
-    border: 2px solid #ccc;
-    border-radius: 25px;
-    text-align: center;
-}
-
-.search-add{
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1rem;
-    margin: 2rem;
-}
-.search-bar{
-    grid-column: auto / span 12;
+    margin-bottom: 3rem;
 }
 
 @media screen and (max-width: 768px){
-    .game-item, .search-bar, .add-function{
+    .search-bar, .add-function{
         grid-column: auto / span 12;
     }
 }

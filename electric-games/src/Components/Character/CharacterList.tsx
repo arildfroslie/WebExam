@@ -29,7 +29,7 @@ const CharacterList = () => {
     }
 
     return(
-        <section>{ getCharacterItems() }</section>
+        <section className="output-container">{ getCharacterItems() }</section>
     )
 };
 

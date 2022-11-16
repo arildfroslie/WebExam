@@ -3,7 +3,7 @@ import IPlatform from "../../interfaces/IPlatform";
 
 const PlatformItem: FC<IPlatform> = ({id, name, image, description }) => {
     return (
-        <article>
+        <article className="platform-item">
             <h3>{name}</h3>
             <img src={image} alt={name} />
             <p>{description}</p>

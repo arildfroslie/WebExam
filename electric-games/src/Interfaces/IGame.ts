@@ -1,10 +1,10 @@
 interface IGame {
     id: number;
     name: string;
-    image: string;
+    image: File | string;
     platform: string;
     genre: string;
-    rating: string;
+    rating: number;
 }
 
 export default IGame;

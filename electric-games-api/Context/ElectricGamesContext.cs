@@ -3,6 +3,8 @@ using ElectricGamesApi.Models;
 
 #nullable disable
 
+namespace ElectricGamesApi.Context;
+
 public class ElectricGamesContext : DbContext
 {
     public ElectricGamesContext(DbContextOptions<ElectricGamesContext> options) : base(options){}

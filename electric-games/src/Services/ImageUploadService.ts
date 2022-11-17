@@ -7,14 +7,16 @@ const ImageUploadService = (
         const uploadImage = async (image: File) => {
             const formData = new FormData();
             formData.append("image", image);
+            
             const response = await axios({
-                method: "post",
                 url: endpoints,
+                method: "POST",
                 data: formData,
                 headers: { "Content-Type": "multipart/form-data" }
             });
 
             formData.delete("image");
+            console.log(response);
     }
 
     return{

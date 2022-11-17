@@ -10,16 +10,16 @@ export const Navbar = () => {
         <a href="/" className="logo">Electric Games</a>
         <ul className="navbar">
           <li><Link to="Home">Home</Link></li>
-          <li><Link to="Games">Games</Link></li>
-          <li><Link to="Characters">Characters</Link></li>
-          <li><Link to="Platforms">Platforms</Link></li>
+          <li><Link to="Game">Games</Link></li>
+          <li><Link to="Character">Characters</Link></li>
+          <li><Link to="Platform">Platforms</Link></li>
         </ul>
        </nav>
       <Routes>
         <Route path="Home" element={ <HomePage/> }></Route>
-        <Route path="Games" element={ <GamePage/> }></Route>
-        <Route path="Characters" element={ <CharacterPage/> }></Route>
-        <Route path="Platforms" element={ <PlatformPage/> }></Route>
+        <Route path="Game" element={ <GamePage/> }></Route>
+        <Route path="Character" element={ <CharacterPage/> }></Route>
+        <Route path="Platform" element={ <PlatformPage/> }></Route>
       </Routes>
     </>
         

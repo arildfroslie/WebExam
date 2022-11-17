@@ -1,6 +1,6 @@
 import { FC } from "react";
 import IPlatform from "../../interfaces/IPlatform";
-import "./Platform.css"
+import "../../css/Platform.css";
 
 const PlatformItem: FC<IPlatform> = ({id, name, image, description }) => {
     const onClickAlert = () => {

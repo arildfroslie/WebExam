@@ -1,4 +1,4 @@
-import "./AddFunction.css";
+import "../../css/AddFunction.css";
 import { useLocation } from "react-router-dom";
 
 

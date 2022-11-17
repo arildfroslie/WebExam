@@ -1,4 +1,4 @@
-.character-item{
+.platform-item{
     grid-column: auto / span 3;
     border: 2px solid #ccc;
     border-radius: 25px;
@@ -6,23 +6,22 @@
     margin: 0 2rem;
     box-shadow: 5px 5px 5px lightgrey;
 }
-
-.character-item i{
+.platform-item i{
     margin: 0 1rem;
     cursor: pointer;
 }
 
-.character-image{
+.platform-image{
     width: 75%;
     height: 40%;
     border-radius: 2rem;
 }
 
 @media screen and (max-width: 768px){
-    .game-item{
+    .platform-item{
         grid-column: auto / span 12;
     }
-    .game-image{
+    .platform-image{
         width: 60%;
         height: 60%;
         border-radius: 2rem;

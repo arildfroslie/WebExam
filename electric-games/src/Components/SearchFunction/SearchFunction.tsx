@@ -1,4 +1,4 @@
-import "./SearchFunction.css";
+import "../../css/SearchFunction.css";
 import { ISearch } from "../../interfaces/ISearch";
 import { useState } from "react";
 import { FC } from "react";

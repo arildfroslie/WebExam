@@ -1,6 +1,6 @@
 import { FC } from "react";
 import IGame from "../../interfaces/IGame";
-import "./Game.css"
+import "../../css/Game.css";
 
 const GameItem: FC<IGame> = ({id, name, image, platform, genre, rating }) => {
     

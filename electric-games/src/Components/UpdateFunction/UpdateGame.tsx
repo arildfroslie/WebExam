@@ -3,7 +3,7 @@ import IGame from "../../interfaces/IGame";
 import GameService from "../../services/GameService";
 import ImageUploadService from "../../services/ImageUploadService";
 import { useLocation } from "react-router-dom";
-import "./UpdateFunction.css";
+import "../../css/UpdateFunction.css";
 
 const UpdateGame = () => {
     const [id, setId] = useState<string>("");

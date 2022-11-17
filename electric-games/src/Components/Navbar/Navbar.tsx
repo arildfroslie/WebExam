@@ -1,8 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
 import { HomePage, GamePage, CharacterPage, PlatformPage } from "../../pages";
-
-
-import "./Navbar.css";
+import "../../css/Navbar.css";
 
 export const Navbar = () => {
     return (

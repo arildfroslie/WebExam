@@ -1,9 +1,5 @@
-import './App.css';
-import { HomePage, GamePage, CharacterPage, PlatformPage } from './pages';
+import "./css/App.css";
 import {Navbar} from './components/Navbar/Navbar';
-
-
-
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import ICharacter from "../../interfaces/ICharacter";
-import "./Character.css"
+import "../../css/Character.css";
 
 const CharacterItem: FC<ICharacter> = ({id, name, image, game, description }) => {
 

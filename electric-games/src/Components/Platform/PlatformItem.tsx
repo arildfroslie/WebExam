@@ -6,7 +6,7 @@ const PlatformItem: FC<IPlatform> = ({id, name, image, description }) => {
     return (
         <article className="platform-item">
             <h3>{name}</h3>
-            <img className="platform-image" src={`https://localhost:7119/images/Platform/${image}`} alt={name} />
+            <img className="platform-image" src={`https://localhost:7119/images/${image}`} alt={name} />
             <p>{description}</p>
         </article>
     );

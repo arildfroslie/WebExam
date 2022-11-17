@@ -24,6 +24,9 @@ const SearchFunction : FC<ISearch> = ({onChange}) => {
             value={searchTerm}
             onChange={handleChange}
           />
+          <div className="icon">
+          <i className="fa-regular fa-square-plus fa-xl"></i>
+          </div>
       </div>
     </>
     );

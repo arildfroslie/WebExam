@@ -17,8 +17,12 @@ const CharacterList = () => {
     }, []);
 
     const getCharacterItems = () => {
-        console.log(characters)
-        return characters?.map( (character, i) => (
+        return characters?.filter((characters) => {
+            if(!searchTerm) {
+                return true
+            }
+            return characters.name.toLowerCase().includes(searchTerm.toLowerCase())
+        }).map( (character, i) => (
             <CharacterItem 
                 key={`character-${i}`}
                 id={character.id}

@@ -5,7 +5,6 @@ const GameService = (
     () => {
         const endpoints = {
             "Games": "https://localhost:7119/game",
-            "Game": "https://localhost:7119/game/{id}",
         }
     
         const getGames = async () => {
@@ -14,7 +13,7 @@ const GameService = (
         }
 
         const getGamesById = async (id: number) => {
-            const response = await axios.get(`${endpoints.Game}/${id}`);
+            const response = await axios.get(`${endpoints.Games}/${id}`);
             console.log(response.data);
             return response.data;
         }
@@ -24,8 +23,9 @@ const GameService = (
             console.log(response.data);
             return response.data;
         }
+
         const updateGame = async (game: IGame) => {
-            const response = await axios.put(`${endpoints.Game}/${game.id}`, game);
+            const response = await axios.put(`${endpoints.Games}/${game.id}`, game);
             return response.data;
         }
 

@@ -1,15 +1,15 @@
-import AddFunction from "../components/AddFunction/AddFunction";
 import GameList from "../components/Game/GameList";
 import Header from "../components/Header/Header";
-import UpdateFunction from "../components/UpdateFunction/UpdateFunction";
+import UpdateGame from "../components/UpdateFunction/UpdateGame";
+import AddGame from "../components/AddFunction/AddGame";
 
 const GamePage = () => {
     return(
         <>
             <Header />
             <GameList />
-            <AddFunction />
-            <UpdateFunction />
+            <AddGame />
+            <UpdateGame />
         </>
     )
 }

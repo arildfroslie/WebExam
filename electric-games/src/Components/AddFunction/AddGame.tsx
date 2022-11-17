@@ -1,11 +1,11 @@
-import IGame from "../../interfaces/IGame";
 import "./AddFunction.css";
 import { useLocation } from "react-router-dom";
+import { ChangeEvent, useState, useContext } from "react";
+
 
 const AddFunction = () => {
     const {pathname} = useLocation();
     const header = pathname.split("/")[1];
-
     return(
         <>
             <section className="add-function">
@@ -48,4 +48,4 @@ const AddFunction = () => {
     )
 }
 
-export default AddFunction;
+export default AddGame;

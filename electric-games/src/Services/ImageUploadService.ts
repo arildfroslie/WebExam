@@ -16,7 +16,6 @@ const ImageUploadService = (
             });
 
             formData.delete("image");
-            console.log(response);
     }
 
     return{

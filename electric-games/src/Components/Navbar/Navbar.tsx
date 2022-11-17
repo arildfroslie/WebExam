@@ -18,9 +18,9 @@ export const Navbar = () => {
        </nav>
       <Routes>
         <Route path="Home" element={ <HomePage/> }></Route>
-        <Route path="Games" element={ <GamePage/> }></Route>
-        <Route path="Characters" element={ <CharacterPage/> }></Route>
-        <Route path="Platforms" element={ <PlatformPage/> }></Route>
+        <Route path="Game" element={ <GamePage/> }></Route>
+        <Route path="Character" element={ <CharacterPage/> }></Route>
+        <Route path="Platform" element={ <PlatformPage/> }></Route>
       </Routes>
     </>
         

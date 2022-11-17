@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ElectricGamesApi.Models;
+using ElectricGamesApi.Context;
 
 namespace ElectricGamesApi.Controllers;
 
@@ -18,64 +19,87 @@ public class GameController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<List<Game>> Get()
+    public async Task<ActionResult<List<Game>>> Get()
     {
-        List<Game> games = await context.Games.ToListAsync();
-        return games;
+        try
+        {
+            List<Game> games = await context.Games.ToListAsync();
+            return Ok(games);
+        }
+        catch
+        {
+            return StatusCode(500);
+        }
     }
 
-    [HttpGet("{id}")] 
+    [HttpGet("{id}")]
     public async Task<ActionResult<Game>> Get(int id)
     {
-        Game? game = await context.Games.FindAsync(id);
-        if (game == null)
+        try
         {
-            return NotFound();
+            Game? game = await context.Games.FindAsync(id);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            return Ok(game);
         }
-        return game;
-    }
-
-    [HttpGet("{name}")] 
-    public async Task<ActionResult<Game>> Get(string name)
-    {
-        Game? game = await context.Games.FindAsync(name);
-        if (game == null)
+        catch
         {
-            return NotFound();
+            return StatusCode(500);
         }
-        return game;
     }
-
-    [HttpDelete ("{id}")]
-    public async Task<ActionResult<Game>> Delete(int id)
-    {
-        Game? game = await context.Games.FindAsync(id);
-        if (game == null)
-        {
-            return NotFound();
-        }
-        context.Games.Remove(game);
-        await context.SaveChangesAsync();
-        return game;
-    }
-
+    
     [HttpPost]
-    public async Task<ActionResult<Game>> Post(Game game)
+    public IActionResult Post(Game newGame)
     {
-        context.Games.Add(game);
-        await context.SaveChangesAsync();
-        return CreatedAtAction(nameof(Get), new { id = game.Id }, game);
+        try
+        {
+            context.Games.Add(newGame);
+            context.SaveChanges();
+            return CreatedAtAction("Get", new { id = newGame.Id }, newGame);
+        }
+        catch
+        {
+            return StatusCode(500);
+        }
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<Game>> Put(int id, Game game)
+    public IActionResult Put(Game editedGame)
     {
-        if (id != game.Id)
+        try
         {
-            return BadRequest();
+            context.Entry(editedGame).State = EntityState.Modified;
+            context.SaveChanges();
+            return NoContent();
         }
-        context.Entry(game).State = EntityState.Modified;
-        await context.SaveChangesAsync();
-        return NoContent();
+        catch
+        {
+            return StatusCode(500);
+        }
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult Delete(int id)
+    {
+        try
+        {
+            Game? gameToDelete = context.Games.Find(id);
+            if (gameToDelete != null)
+            {
+                context.Games.Remove(gameToDelete);
+                context.SaveChanges();
+                return NoContent();
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+        catch
+        {
+            return StatusCode(500);
+        }
     }
 }

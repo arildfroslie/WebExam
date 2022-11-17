@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ElectricGamesApi.Models;
+using ElectricGamesApi.Context;
 
 namespace ElectricGamesApi.Controllers;
 

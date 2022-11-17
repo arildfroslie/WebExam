@@ -14,28 +14,27 @@ const GameService = (
         }
 
         const getGamesById = async (id: number) => {
-            const response = await axios.get(`${endpoints.Game}/${id}`);
-            console.log(response.data);
-            return response.data;
-        }
-
-        const getGameByName = async (name: string) => {
-            const response = await axios.get(`${endpoints.Games}/${name}`);
+            const response = await axios.get(endpoints.Game.replace("{id}", id.toString()));
             return response.data;
         }
 
         const postGame = async (game: IGame) => {
             const response = await axios.post(endpoints.Games, game);
-            console.log(response.data);
+            return response.data;
+        }
+
+        const updateGame = async (editedGame: IGame) => {
+            const response = await axios.put(endpoints.Game.replace("{id}", editedGame.id.toString()), editedGame);
             return response.data;
         }
     
         return {
             getGames,
             getGamesById,
-            getGameByName,
-            postGame
+            postGame,
+            updateGame
         }
 }
 )();
+
 export default GameService;

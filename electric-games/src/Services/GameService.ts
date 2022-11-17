@@ -18,15 +18,14 @@ const GameService = (
             console.log(response.data);
             return response.data;
         }
-
-        const getGameByName = async (name: string) => {
-            const response = await axios.get(`${endpoints.Games}/${name}`);
-            return response.data;
-        }
         
         const postGame = async (game: IGame) => {
             const response = await axios.post(endpoints.Games, game);
             console.log(response.data);
+            return response.data;
+        }
+        const updateGame = async (game: IGame) => {
+            const response = await axios.put(`${endpoints.Game}/${game.id}`, game);
             return response.data;
         }
 
@@ -35,8 +34,8 @@ const GameService = (
         return {
             getGames,
             getGamesById,
-            getGameByName,
             postGame,
+            updateGame
 
         }
 }

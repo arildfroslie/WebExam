@@ -108,7 +108,7 @@ const UpdateGame = () => {
                 </div>
                 <div>
                     <label>Velg bilde</label><br />
-                    <input className="btn" onChange={setImageHandler} type="file"/>
+                <input className="btn" onChange={setImageHandler} type="file"/>
                 </div>
                 <div className="update-element">
                     <input 

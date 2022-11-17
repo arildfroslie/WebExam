@@ -1,9 +1,8 @@
 import "./AddFunction.css";
 import { useLocation } from "react-router-dom";
-import { ChangeEvent, useState, useContext } from "react";
 
 
-const AddFunction = () => {
+const AddGame = () => {
     const {pathname} = useLocation();
     const header = pathname.split("/")[1];
     return(

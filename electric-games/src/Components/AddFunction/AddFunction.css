@@ -11,6 +11,7 @@
     border-radius: 5px;
     padding: 1.5rem 0.5rem;
     margin: 1rem 0;
+    box-shadow: 5px 5px 5px lightgrey;
 }
 
 .btn{
@@ -19,4 +20,5 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: white;
+    box-shadow: 2px 3px 4px lightgrey;
 }

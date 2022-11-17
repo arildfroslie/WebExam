@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
 }
 .search-bar input{
@@ -12,4 +13,5 @@
     border-radius: 5px;
     padding: 1.5rem 0.5rem;
     margin: 1rem 0;
+    box-shadow: 5px 5px 5px lightgrey;
 }

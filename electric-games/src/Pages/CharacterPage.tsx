@@ -6,7 +6,6 @@ const CharacterPage = () => {
     return(
         <>
             <Header />
-            <SearchFunction />
             <CharacterList/>
         </>
     )

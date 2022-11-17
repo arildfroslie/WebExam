@@ -6,7 +6,6 @@ const PlatformPage = () => {
     return(
         <>
             <Header />
-            <SearchFunction />
             <PlatformList />
         </>
     )

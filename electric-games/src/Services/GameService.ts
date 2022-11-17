@@ -29,13 +29,18 @@ const GameService = (
             return response.data;
         }
 
+        const deleteGame = async (id: number) => {
+            const response = await axios.delete(`${endpoints.Games}/${id}`);
+            return response.data;
+        }
 
 
         return {
             getGames,
             getGamesById,
             postGame,
-            updateGame
+            updateGame,
+            deleteGame
 
         }
 }

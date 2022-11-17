@@ -17,8 +17,12 @@ const PlatformList = () => {
     }, []);
 
     const getPlatformItems = () => {
-        console.log(Platforms);
-        return Platforms?.map( (Platform, i) => (
+        return Platforms?.filter((Platforms) => {
+            if(!searchTerm) {
+                return true
+            }
+            return Platforms.name.toLowerCase().includes(searchTerm.toLowerCase())
+        }).map((Platform, i) => (
             <PlatformItem 
                 key={`Platform-${i}`}
                 id={Platform.id}

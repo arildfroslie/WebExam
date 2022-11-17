@@ -7,6 +7,11 @@
     box-shadow: 5px 5px 5px lightgrey;
 }
 
+.character-item i{
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
 .character-image{
     width: 75%;
     height: 40%;

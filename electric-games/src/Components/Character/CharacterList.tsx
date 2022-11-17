@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import CharacterItem from "./CharacterItem";
 import CharacterService from "../../services/CharacterService";
 import ICharacter from "../../interfaces/ICharacter";
+import SearchFunction from "../SearchFunction/SearchFunction";
 
 const CharacterList = () => {
     const [characters, setCharacters] = useState<ICharacter[]>([]);
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
         const fetchCharacters = async () => {
@@ -29,7 +31,10 @@ const CharacterList = () => {
     }
 
     return(
-        <section className="output-container">{ getCharacterItems() }</section>
+        <>
+            <SearchFunction onChange={setSearchTerm} />
+            <section className="output-container">{ getCharacterItems() }</section>
+        </>
     )
 };
 

@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import PlatformItem from "./PlatformItem";
 import PlatformService from "../../services/PlatformService";
 import IPlatform from "../../interfaces/IPlatform";
+import SearchFunction from "../SearchFunction/SearchFunction";
 
 const PlatformList = () => {
     const [Platforms, setPlatforms] = useState<IPlatform[]>([]);
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
         const fetchPlatforms = async () => {
@@ -28,7 +30,10 @@ const PlatformList = () => {
     }
 
     return(
-        <section className="output-container">{ getPlatformItems() }</section>
+        <>
+            <SearchFunction onChange={setSearchTerm} />
+            <section className="output-container">{ getPlatformItems() }</section>
+        </>
     )
 };
 

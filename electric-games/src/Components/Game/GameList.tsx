@@ -3,7 +3,7 @@ import GameItem from "./GameItem";
 import SearchFunction from "../SearchFunction/SearchFunction";
 import { GameContext } from "../../context/GameContext";
 import IGameContext from "../../interfaces/IGameContext";
-import "../../css/DeleteFunction.css"
+
 
 const GameList = () => {
   const {games} = useContext(GameContext) as IGameContext;

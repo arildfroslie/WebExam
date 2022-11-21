@@ -1,4 +1,4 @@
-import { useState, useContext, ChangeEvent } from "react";
+import { useContext} from "react";
 import { GameContext } from "../../context/GameContext";
 import IGameContext from "../../interfaces/IGameContext";
 import { FC } from "react";
@@ -15,8 +15,8 @@ const DeleteFunction: FC< Pick<IGame,"id">> = ({id}) => {
     }
 
     return(
-            <button className="delete-btn" onClick={deleteGame}>
-                <i className="fa-solid fa-trash fa-xl" />
+            <button className="icon" onClick={deleteGame}>
+                <i className="fa-regular fa-trash-can fa-xl"></i>
             </button>
     )
 }

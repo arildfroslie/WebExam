@@ -1,9 +1,8 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useRef } from "react";
 import IGame from "../../interfaces/IGame";
 import GameService from "../../services/GameService";
 import ImageUploadService from "../../services/ImageUploadService";
 import { useLocation } from "react-router-dom";
-import "../../css/UpdateFunction.css";
 
 const UpdateGame = () => {
     const [id, setId] = useState<string>("");
@@ -28,14 +27,6 @@ const UpdateGame = () => {
         setImage(game.image);
     };
 
-    const setImageHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        const {files} = e.target;
-        if (files != null) {
-            const file = files[0]
-            setImageURL(file);
-        }
-    }
-
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         switch (name) {
@@ -46,6 +37,11 @@ const UpdateGame = () => {
                 setName(value);
                 break;
             case "image":
+                const {files} = e.target;
+                if (files != null) {
+                    const file = files[0]
+                    setImageURL(file);
+                }
                 setImage(value);
                 break;
             case "platform":
@@ -88,7 +84,7 @@ const UpdateGame = () => {
     return(
         <>
             <section className="update-container">
-                <h3>Update a {header}:</h3>
+                <label>Update a {header}:</label><br/>
                 <div className="update-element">
                     <input 
                     className="text-input-id" 
@@ -100,6 +96,7 @@ const UpdateGame = () => {
                     />
                     <button className="btn" onClick={getGameFromService}>Get Game</button>
                 </div>
+                
                 <div className="update-element">
                     <input 
                     className="text-input" 
@@ -108,16 +105,6 @@ const UpdateGame = () => {
                     onChange={changeHandler}
                     name='name'
                     value={name}
-                    />
-                </div>
-
-                <div className="update-element">
-                    <label>Velg bilde</label><br />
-                <input 
-                    className="btn" 
-                    onChange={setImageHandler} 
-                    type="file"
-                    name='image'
                     />
                 </div>
 
@@ -151,6 +138,16 @@ const UpdateGame = () => {
                     onChange={changeHandler} 
                     name='rating'
                     value={rating}
+                    />
+                </div>
+
+                <div className="update-element">
+                    <label>Velg bilde</label><br />
+                <input 
+                    className="btn" 
+                    onChange={changeHandler} 
+                    type="file"
+                    name='image'
                     />
                 </div>
 

@@ -10,6 +10,7 @@ const GamePage = () => {
             <GameList />
             <AddGame />
             <UpdateGame />
+            
         </>
     )
 }

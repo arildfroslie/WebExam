@@ -14,12 +14,13 @@ const UpdateGame = () => {
     const [image, setImage] = useState<string>("");
     const [imageURL, setImageURL] = useState<File | null>(null);
 
+    console.log(imageURL);
+
     const {pathname} = useLocation();
     const header = pathname.split("/")[1];
 
     const getGameFromService = async () => {
         const game = await GameService.getGamesById(parseInt(id));
-        console.log(game);
         setName(game.name);
         setPlatform(game.platform);
         setGenre(game.genre);
@@ -30,7 +31,8 @@ const UpdateGame = () => {
     const setImageHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const {files} = e.target;
         if (files != null) {
-            setImageURL(files[0]);
+            const file = files[0]
+            setImageURL(file);
         }
     }
 
@@ -68,6 +70,7 @@ const UpdateGame = () => {
             rating,
         };
         await GameService.updateGame(game);
+        window.location.reload();
     };
 
     const uploadImage = () => {
@@ -75,6 +78,7 @@ const UpdateGame = () => {
           ImageUploadService.uploadImage( imageURL );
         }
       }
+      console.log(uploadImage())
 
       const editGameAndUploadImage = async () => {
         await editGame();
@@ -106,10 +110,17 @@ const UpdateGame = () => {
                     value={name}
                     />
                 </div>
-                <div>
+
+                <div className="update-element">
                     <label>Velg bilde</label><br />
-                <input className="btn" onChange={setImageHandler} type="file"/>
+                <input 
+                    className="btn" 
+                    onChange={setImageHandler} 
+                    type="file"
+                    name='image'
+                    />
                 </div>
+
                 <div className="update-element">
                     <input 
                     className="text-input" 
@@ -120,6 +131,7 @@ const UpdateGame = () => {
                     value={platform}
                     />
                 </div>
+
                 <div className="update-element">
                     <input 
                     className="text-input" 
@@ -130,6 +142,7 @@ const UpdateGame = () => {
                     value={genre}
                     />
                 </div>
+
                 <div className="update-element">
                     <input 
                     className="text-input" 
@@ -140,9 +153,13 @@ const UpdateGame = () => {
                     value={rating}
                     />
                 </div>
+
                 <div className="update-element">
-                    <button className="btn" onClick={uploadImage}>Save Changes</button>
+                    <button 
+                    className="btn" 
+                    onClick={uploadImage}>Save Changes</button>
                 </div>
+
             </section>
         </>
     )

@@ -5,6 +5,7 @@ const ImageUploadService = (
         const endpoints = "https://localhost:7119/ImageUpload";
 
         const uploadImage = async (image: File) => {
+            
             const formData = new FormData();
             formData.append("image", image);
             
@@ -16,6 +17,7 @@ const ImageUploadService = (
             });
 
             formData.delete("image");
+            console.log(response);
     }
 
     return{

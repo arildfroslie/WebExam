@@ -1,10 +1,16 @@
 import "../../css/AddFunction.css";
 import { useLocation } from "react-router-dom";
+import { useContext, useState } from "react";
+import { GameContext } from "../../context/GameContext";
+import IGameContext from "../../interfaces/IGameContext";
 
 
 const AddGame = () => {
     const {pathname} = useLocation();
     const header = pathname.split("/")[1];
+    
+    
+
     return(
         <>
             <section className="add-function">
@@ -38,7 +44,8 @@ const AddGame = () => {
                     <input 
                     className="btn" 
                     type="button" 
-                    value="Submit" 
+                    value="Submit"
+                    onClick={AddGame} 
                     />  
 
                 </form>

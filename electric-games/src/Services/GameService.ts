@@ -14,13 +14,11 @@ const GameService = (
 
         const getGamesById = async (id: number) => {
             const response = await axios.get(`${endpoints.Games}/${id}`);
-            console.log(response.data);
             return response.data;
         }
         
         const postGame = async (game: IGame) => {
             const response = await axios.post(endpoints.Games, game);
-            console.log(response.data);
             return response.data;
         }
 

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import IGame from "../../interfaces/IGame";
 import "../../css/Game.css";
+import DeleteFunction from "../DeleteFunction/DeleteFunction";
 
 const GameItem: FC<IGame> = ({id, name, image, platform, genre, rating }) => {
     
@@ -11,16 +12,14 @@ const GameItem: FC<IGame> = ({id, name, image, platform, genre, rating }) => {
 
 
     return (
-        <article className="game-item">
+        <article className="game-item" id={String(id)}>
             <h3>{name}</h3>
             <img className="game-image" src={`https://localhost:7119/images/${image}`} alt={name} />
             <p>Platform: {platform}</p>
             <p>Genre: {genre}</p>
             <p>Rating: {rating}%</p>
             
-            <span onClick={onClickAlert}>
-                <i className="fa-solid fa-trash fa-xl" />
-            </span>
+            <DeleteFunction id={id}/>
             <span 
             onClick={onClickAlert}>
             <i className="fa-solid fa-pencil fa-xl"></i>

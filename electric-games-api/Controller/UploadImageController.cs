@@ -13,6 +13,12 @@ public class UploadImageController : ControllerBase
         hosting = _hosting;
     }
 
+    [HttpGet]
+    public string Get()
+    {
+        return "Hei fra UploadImageController";
+    }
+
     [HttpPost]
     public IActionResult SaveImage(IFormFile file)
     {

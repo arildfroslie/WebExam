@@ -64,6 +64,7 @@ const AddGame = () => {
     const submitGame = () => {
         addGame();
         uploadImage();
+        window.location.reload();
     };
 
     return(
@@ -116,7 +117,7 @@ const AddGame = () => {
                     className="btn" 
                     type="button" 
                     value="Submit"
-                    onClick={addGame} 
+                    onClick={submitGame} 
                     />  
 
                 </form>

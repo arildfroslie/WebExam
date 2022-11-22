@@ -51,12 +51,12 @@ public class GameController : ControllerBase
     }
     
     [HttpPost]
-    public IActionResult Post(Game newGame)
+    public async Task<ActionResult<Game>> Post(Game newGame)
     {
         try
         {
             context.Games.Add(newGame);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
             return CreatedAtAction("Get", new { id = newGame.Id }, newGame);
         }
         catch

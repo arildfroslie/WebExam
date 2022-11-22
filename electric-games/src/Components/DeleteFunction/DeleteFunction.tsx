@@ -9,7 +9,7 @@ const DeleteFunction: FC< Pick<IGame,"id">> = ({id}) => {
 
     const deleteGame = () => {
         if (window.confirm("Are you sure you want to delete this?")) {
-            deleteGameById(id)
+            deleteGameById(id!)
             window.location.reload();
         }
     }

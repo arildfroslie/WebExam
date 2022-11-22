@@ -9,11 +9,8 @@ const UpdateGame = () => {
     const [name, setName] = useState<string>("");
     const [platform, setPlatform] = useState<string>("");
     const [genre, setGenre] = useState<string>("");
-    const [rating, setRating] = useState<number>(0);
-    const [image, setImage] = useState<string>("");
-    const [imageURL, setImageURL] = useState<File | null>(null);
-
-    console.log(imageURL);
+    const [rating, setRating] = useState<number>( 0 ); 
+    const [image, setImage] = useState<File | null>(null);
 
     const {pathname} = useLocation();
     const header = pathname.split("/")[1];
@@ -40,9 +37,8 @@ const UpdateGame = () => {
                 const {files} = e.target;
                 if (files != null) {
                     const file = files[0]
-                    setImageURL(file);
+                    setImage(file);
                 }
-                setImage(value);
                 break;
             case "platform":
                 setPlatform(value);
@@ -60,7 +56,7 @@ const UpdateGame = () => {
         const game: IGame = {
             id : parseInt(id),
             name,
-            image,
+            image : image!,
             platform,
             genre,
             rating,
@@ -70,11 +66,10 @@ const UpdateGame = () => {
     };
 
     const uploadImage = () => {
-        if( imageURL != null){
-          ImageUploadService.uploadImage( imageURL );
+        if( image != null){
+          ImageUploadService.uploadImage( image );
         }
       }
-      console.log(uploadImage())
 
       const editGameAndUploadImage = async () => {
         await editGame();
@@ -154,7 +149,7 @@ const UpdateGame = () => {
                 <div className="update-element">
                     <button 
                     className="btn" 
-                    onClick={uploadImage}>Save Changes</button>
+                    onClick={editGame}>Save Changes</button>
                 </div>
 
             </section>

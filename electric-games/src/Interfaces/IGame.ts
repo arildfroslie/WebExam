@@ -1,7 +1,7 @@
 interface IGame {
-    id: number;
+    id?: number;
     name: string;
-    image: File | string;
+    image?: File;
     platform: string;
     genre: string;
     rating: number;

@@ -27,6 +27,7 @@ body{
 .header-title{    
     font-size: 2rem;
     text-align: center;
+
 }
 
 /* Navbar Style */
@@ -42,6 +43,7 @@ body{
 
 .logo{
     font-size: 2rem;
+    margin: 1rem;
 }
 
 .nav ul{
@@ -60,7 +62,6 @@ body{
     align-items: center;
     padding: .25rem;
 }
-
 .nav li:hover{
     background-color: #777;
 }

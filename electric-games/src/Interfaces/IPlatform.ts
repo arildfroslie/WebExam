@@ -1,5 +1,5 @@
 interface IPlatform {
-    id: number;
+    id?: number;
     name: string;
     image: string;
     description: string;

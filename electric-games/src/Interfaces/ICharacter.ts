@@ -1,5 +1,5 @@
 interface ICharacter {
-    id: number;
+    id?: number;
     name: string;
     image: string;
     game: string;

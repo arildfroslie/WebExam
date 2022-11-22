@@ -1,21 +1,19 @@
 import { useLocation } from "react-router-dom";
 import { useState, ChangeEvent } from "react";
-import GameService from "../../services/GameService";
-import IGame from "../../interfaces/IGame";
+import CharacterService from "../../services/CharacterService";
+import ICharacter from "../../interfaces/ICharacter";
 import ImageUploadService from "../../services/ImageUploadService";
 
 
-
-const AddGame = () => {
+const AddCharacter = () => {
     const {pathname} = useLocation();
     const header = pathname.split("/")[1];
 
     const [name, setName] = useState<string>("");
-    const [platform, setPlatform] = useState<string>("");
-    const [genre, setGenre] = useState<string>("");
-    const [rating, setRating] = useState<number>(0);
     const [image, setImage] = useState<string>("");   
     const [imageFile, setImageFile] = useState<File | null>(null);
+    const [description, setDescription] = useState<string>("");
+    const [game, setGame] = useState<string>("");
 
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -23,14 +21,11 @@ const AddGame = () => {
             case "name":
                 setName(value);
                 break;
-            case "platform":
-                setPlatform(value);
+            case "game":
+                setGame(value);
                 break;
-            case "genre":
-                setGenre(value);
-                break;
-            case "rating":
-                setRating(parseInt(value));
+            case "description":
+                setDescription(value);
                 break;
             case "image":
                 const {files} = e.target;
@@ -42,16 +37,15 @@ const AddGame = () => {
         }
     };
 
-    const addGame = async () => {
-        const game: IGame = {
+    const AddCharacter = async () => {
+        const character: ICharacter = {
             name,
-            platform,
-            genre,
-            rating,
-            image
+            image,
+            game,
+            description
         };
-        console.log(game);
-       await GameService.addGame(game);
+        console.log(character);
+       await CharacterService.addCharacter(character);
     };
 
     const uploadImage = async () => {
@@ -61,8 +55,8 @@ const AddGame = () => {
         console.log(imageFile?.name);
     }
 
-    const submitGame = () => {
-        addGame();
+    const submitcharacter = () => {
+        AddCharacter();
         uploadImage();
     };
 
@@ -75,37 +69,29 @@ const AddGame = () => {
                     <input 
                     className="text-input" 
                     type="text" 
-                    placeholder="Title"
+                    placeholder="Name"
                     name="name"
                     onChange={changeHandler}
                     />
 
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Platform" 
-                    name="platform"
+                    <input
+                    className="text-input"
+                    type="text"
+                    placeholder="Game"
+                    name="game"
+                    onChange={changeHandler}
+                    />
+
+                    <input
+                    className="text-input"
+                    type="text"
+                    placeholder="Description"
+                    name="description"
                     onChange={changeHandler}
                     />
 
                     <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Genre"
-                    name="genre"
-                    onChange={changeHandler} 
-                    />
-
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Rating" 
-                    name="rating"
-                    onChange={changeHandler}
-                    /> 
-
-                    <input 
-                    className="btn-img" 
+                    className="btn" 
                     onChange={changeHandler} 
                     type="file"
                     placeholder="Image"
@@ -113,10 +99,10 @@ const AddGame = () => {
                     />
 
                     <input 
-                    className="btn-submit" 
+                    className="btn" 
                     type="button" 
                     value="Submit"
-                    onClick={submitGame} 
+                    onClick={submitcharacter} 
                     />  
 
                 </form>
@@ -125,4 +111,4 @@ const AddGame = () => {
     )
 }
 
-export default AddGame;
+export default AddCharacter;

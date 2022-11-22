@@ -8,7 +8,7 @@ const GameItem: FC<IGame> = ({id, name, image, platform, genre, rating }) => {
     const gameContext = useContext(GameContext);
 
     return (
-        <article className="output-item" id={String(id)}>
+        <article className="output-item">
             <h3>{name}</h3>
             <img className="output-image" src={`https://localhost:7119/images/${image}`} alt={name} />
             <p>Platform: {platform}</p>

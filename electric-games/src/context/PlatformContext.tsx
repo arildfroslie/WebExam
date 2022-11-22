@@ -15,10 +15,10 @@ const PlatformProvider = ({children} : Props) => {
     const [platformToEdit, setPlatformToEdit] = useState<IPlatform | null>(null);
 
     useEffect(()=>{
-        getplatformsFromService();
+        getPlatformsFromService();
     }, [])
 
-    const getplatformsFromService = async () => {
+    const getPlatformsFromService = async () => {
         const platformsFromService = await platformService.getPlatforms();
         setPlatforms(platformsFromService);
     }

@@ -11,7 +11,7 @@ type Props = {
 }
 
 const CharacterProvider = ({children} : Props) => {
-    const [characters, setcharacters] = useState<ICharacter[]>([]);
+    const [characters, setCharacters] = useState<ICharacter[]>([]);
     const [characterToEdit, setCharacterToEdit] = useState<ICharacter | null>(null);
 
     useEffect(()=>{
@@ -20,7 +20,7 @@ const CharacterProvider = ({children} : Props) => {
 
     const getCharactersFromService = async () => {
         const charactersFromService = await CharacterService.getCharacters();
-        setcharacters(charactersFromService);
+        setCharacters(charactersFromService);
     }
     
     const deleteCharacterById = async (id: number) => {

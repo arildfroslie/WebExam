@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useRef, useContext, useEffect } from "react";
+import { useState, ChangeEvent, useContext, useEffect } from "react";
 import IGame from "../../interfaces/IGame";
 import GameService from "../../services/GameService";
 import { useLocation } from "react-router-dom";
@@ -18,7 +18,7 @@ const UpdateGame = () => {
     const gameContext = useContext(GameContext);
 
     const getGameFromService = async (id: number) => {
-        console.log("I am trying to get:" + id)
+        console.log("I am trying to get:" + id);
         const game = await GameService.getGamesById(id);
         setId(game.id);
         setName(game.name);

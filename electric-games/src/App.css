@@ -180,7 +180,7 @@ body{
 
 /* Media Styles */
 @media screen and (max-width: 768px){
-    .output-item{
+    .output-item, .add-function, .update-container{
         grid-column: auto / span 12;
     }   
     .output-image{

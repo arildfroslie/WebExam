@@ -68,7 +68,7 @@ const AddGame = () => {
 
     return(
         <>
-            <section className="add-function">
+            <section className="add-function" id="add-game">
                 <form className="add-function-form">
 
                     <label>Add a {header}:</label><br/>

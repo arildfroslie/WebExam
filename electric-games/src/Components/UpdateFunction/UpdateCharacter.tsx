@@ -53,7 +53,7 @@ const UpdateCharacter = () => {
 
     return(
         <>
-            <section className="update-container">
+            <section className="update-container" id="update-character">
                 <label>Update a {header}:</label><br/>
                 <div className="update-element">
                     <input 

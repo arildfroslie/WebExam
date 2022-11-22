@@ -1,6 +1,7 @@
 import { ISearch } from "../../interfaces/ISearch";
 import { useState } from "react";
 import { FC } from "react";
+import scrollFunction from "../UpdateFunction/ScrollFunction";
 
 const SearchFunction : FC<ISearch> = ({onChange}) => {
 
@@ -23,7 +24,7 @@ const SearchFunction : FC<ISearch> = ({onChange}) => {
             value={searchTerm}
             onChange={handleChange}
           />
-          <div className="icon">
+          <div className="icon" onClick={() =>{scrollFunction("add-game")}}>
           <i className="fa-regular fa-square-plus fa-xl"></i>
           </div>
       </div>

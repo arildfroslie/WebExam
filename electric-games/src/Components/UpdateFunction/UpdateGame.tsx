@@ -1,7 +1,8 @@
-import { useState, ChangeEvent, useRef } from "react";
+import { useState, ChangeEvent, useRef, useContext, useEffect } from "react";
 import IGame from "../../interfaces/IGame";
 import GameService from "../../services/GameService";
 import { useLocation } from "react-router-dom";
+import { GameContext } from "../../context/GameContext";
 
 const UpdateGame = () => {
     const [id, setId] = useState<string>("");
@@ -14,14 +15,24 @@ const UpdateGame = () => {
     const {pathname} = useLocation();
     const header = pathname.split("/")[1];
 
-    const getGameFromService = async () => {
-        const game = await GameService.getGamesById(parseInt(id));
+    const gameContext = useContext(GameContext);
+
+    const getGameFromService = async (id: number) => {
+        console.log("I am trying to get:" + id)
+        const game = await GameService.getGamesById(id);
+        setId(game.id);
         setName(game.name);
         setPlatform(game.platform);
         setGenre(game.genre);
         setRating(game.rating);
         setImage(game.image);
     };
+
+    useEffect(() => {
+        if (gameContext?.gameToEdit && gameContext.gameToEdit.id) {
+            getGameFromService(gameContext?.gameToEdit.id)
+        }
+    },[gameContext?.gameToEdit?.id]);
 
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -59,7 +70,7 @@ const UpdateGame = () => {
 
     return(
         <>
-            <section className="update-container">
+            <section className="update-container" id="update-game">
                 <label>Update a {header}:</label><br/>
                 <div className="update-element">
                     <input 
@@ -70,7 +81,7 @@ const UpdateGame = () => {
                     name='id'
                     value={id}
                     />
-                    <button className="btn-txt-input" onClick={getGameFromService}>Get Game</button>
+
                 </div>
                 
                 <div className="update-element">

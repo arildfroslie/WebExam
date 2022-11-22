@@ -35,17 +35,6 @@ public class PlatformController : ControllerBase
         return Platform;
     }
 
-    [HttpGet("{name}")] 
-    public async Task<ActionResult<Platform>> Get(string name)
-    {
-        Platform? Platform = await context.Platforms.FindAsync(name);
-        if (Platform == null)
-        {
-            return NotFound();
-        }
-        return Platform;
-    }
-
     [HttpDelete ("{id}")]
     public async Task<ActionResult<Platform>> Delete(int id)
     {

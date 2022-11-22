@@ -12,6 +12,7 @@ type Props = {
 
 const GameProvider = ({children} : Props) => {
     const [games, setGames] = useState<IGame[]>([]);
+    const [gameToEdit, setGameToEdit] = useState<IGame | null>(null);
 
     useEffect(()=>{
         getGamesFromService();
@@ -21,7 +22,6 @@ const GameProvider = ({children} : Props) => {
         const gamesFromService = await GameService.getGames();
         setGames(gamesFromService);
     }
-   
     
     const deleteGameById = async (id: number) => {
         await GameService.deleteGame(id);
@@ -33,7 +33,7 @@ const GameProvider = ({children} : Props) => {
     
 
     return(
-        <GameContext.Provider value={{games, deleteGameById, addGame}}>
+        <GameContext.Provider value={{games, gameToEdit, setGameToEdit, deleteGameById, addGame}}>
             {children}
         </GameContext.Provider>
     )

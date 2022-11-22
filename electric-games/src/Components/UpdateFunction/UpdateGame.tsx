@@ -70,7 +70,7 @@ const UpdateGame = () => {
                     name='id'
                     value={id}
                     />
-                    <button className="btn" onClick={getGameFromService}>Get Game</button>
+                    <button className="btn-txt-input" onClick={getGameFromService}>Get Game</button>
                 </div>
                 
                 <div className="update-element">
@@ -119,7 +119,7 @@ const UpdateGame = () => {
 
                 <div className="update-element">
                     <button 
-                    className="btn" 
+                    className="btn-save" 
                     onClick={editGame}>Save Changes</button>
                 </div>
 

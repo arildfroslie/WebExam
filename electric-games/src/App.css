@@ -13,13 +13,37 @@ body{
     height: 2rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: white;
+    background-color: rgb(70, 161, 35);
     box-shadow: 2px 3px 4px lightgrey;
+    margin-top: 5%;
+}
+.btn-submit, .btn-save{
+    width: 50%;
+    color: white;
+    height: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(70, 161, 35);
+    box-shadow: 2px 3px 4px lightgrey;
+    margin-top: 5%;
+}
+.btn-img{
+    width: 100%;
 }
 .icon{
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+.btn-txt-input{
+    margin-left: 3%;
+    color: white;
+    height: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(70, 161, 35);
+    box-shadow: 2px 3px 4px lightgrey;
+    margin-top: 5%;
 }
 
 
@@ -27,6 +51,7 @@ body{
 .header-title{    
     font-size: 2rem;
     text-align: center;
+    color: white;
 
 }
 
@@ -39,6 +64,7 @@ body{
     gap: 2rem;
     padding: 0 1rem;
     color: white;
+    border-radius: 0 0 10px 10px ;
 }
 
 .logo{

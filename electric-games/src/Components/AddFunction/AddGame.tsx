@@ -106,7 +106,7 @@ const AddGame = () => {
                     /> 
 
                     <input 
-                    className="btn" 
+                    className="btn-img" 
                     onChange={changeHandler} 
                     type="file"
                     placeholder="Image"
@@ -114,7 +114,7 @@ const AddGame = () => {
                     />
 
                     <input 
-                    className="btn" 
+                    className="btn-submit" 
                     type="button" 
                     value="Submit"
                     onClick={submitGame} 

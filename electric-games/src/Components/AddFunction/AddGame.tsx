@@ -14,15 +14,8 @@ const AddGame = () => {
     const [platform, setPlatform] = useState<string>("");
     const [genre, setGenre] = useState<string>("");
     const [rating, setRating] = useState<number>(0);
-    const [image, setImage] = useState<File | null>(null);
-
-
-    const uploadImage = async () => {
-        if (image != null) {
-            ImageUploadService.uploadImage(image);
-        } 
-    }
-    
+    const [image, setImage] = useState<string>("");   
+    const [imageFile, setImageFile] = useState<File | null>(null);
 
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -43,7 +36,8 @@ const AddGame = () => {
                 const {files} = e.target;
                 if (files != null) {
                     const file = files[0]
-                setImage(file);
+                setImageFile(file);
+                setImage(file.name)
             }
         }
     };
@@ -54,15 +48,23 @@ const AddGame = () => {
             platform,
             genre,
             rating,
-            image : image!
+            image
         };
         console.log(game);
        await GameService.addGame(game);
     };
 
+    const uploadImage = async () => {
+        if (image != null) {
+            ImageUploadService.uploadImage(imageFile!);
+        } 
+        console.log(imageFile?.name);
+    }
+
     const submitGame = () => {
         addGame();
         uploadImage();
+        window.location.reload();
     };
 
     return(

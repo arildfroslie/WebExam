@@ -9,7 +9,7 @@ const UpdateGame = () => {
     const [platform, setPlatform] = useState<string>("");
     const [genre, setGenre] = useState<string>("");
     const [rating, setRating] = useState<number>( 0 ); 
-    const [image, setImage] = useState<File | null>(null);
+    const [image, setImage] = useState<string>("");
 
     const {pathname} = useLocation();
     const header = pathname.split("/")[1];
@@ -32,13 +32,6 @@ const UpdateGame = () => {
             case "name":
                 setName(value);
                 break;
-            case "image":
-                const {files} = e.target;
-                if (files != null) {
-                    const file = files[0]
-                    setImage(file);
-                }
-                break;
             case "platform":
                 setPlatform(value);
                 break;
@@ -55,7 +48,7 @@ const UpdateGame = () => {
         const game: IGame = {
             id : parseInt(id),
             name,
-            image : image!,
+            image,
             platform,
             genre,
             rating,
@@ -123,8 +116,6 @@ const UpdateGame = () => {
                     value={rating}
                     />
                 </div>
-
-
 
                 <div className="update-element">
                     <button 

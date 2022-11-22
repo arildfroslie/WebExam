@@ -1,7 +1,6 @@
 import { useState, ChangeEvent, useRef } from "react";
 import IGame from "../../interfaces/IGame";
 import GameService from "../../services/GameService";
-import ImageUploadService from "../../services/ImageUploadService";
 import { useLocation } from "react-router-dom";
 
 const UpdateGame = () => {
@@ -65,17 +64,6 @@ const UpdateGame = () => {
         window.location.reload();
     };
 
-    const uploadImage = () => {
-        if( image != null){
-          ImageUploadService.uploadImage( image );
-        }
-      }
-
-      const editGameAndUploadImage = async () => {
-        await editGame();
-        await uploadImage();
-    }
-
     return(
         <>
             <section className="update-container">
@@ -136,15 +124,7 @@ const UpdateGame = () => {
                     />
                 </div>
 
-                <div className="update-element">
-                    <label>Velg bilde</label><br />
-                <input 
-                    className="btn" 
-                    onChange={changeHandler} 
-                    type="file"
-                    name='image'
-                    />
-                </div>
+
 
                 <div className="update-element">
                     <button 

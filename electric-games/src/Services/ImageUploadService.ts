@@ -2,26 +2,28 @@ import axios from "axios";
 
 const ImageUploadService = (
     () => {
-        const endpoints = "https://localhost:7119/ImageUpload";
+        const imageUploadEndpoints = "https://localhost:7119/uploadimage";
 
         const uploadImage = async (image: File) => {
             
             const formData = new FormData();
-            formData.append("image", image);
+
+            formData.append("file", image);
             
             const response = await axios({
-                url: endpoints,
+                url: imageUploadEndpoints,
                 method: "POST",
                 data: formData,
                 headers: { "Content-Type": "multipart/form-data" }
             });
 
             formData.delete("image");
-            console.log(response);
+            
     }
 
     return{
         uploadImage
+
     }
 }
 )();

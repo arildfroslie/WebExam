@@ -2,6 +2,8 @@ import { useLocation } from "react-router-dom";
 import { useState, ChangeEvent } from "react";
 import GameService from "../../services/GameService";
 import IGame from "../../interfaces/IGame";
+import ImageUploadService from "../../services/ImageUploadService";
+
 
 
 const AddGame = () => {
@@ -13,6 +15,13 @@ const AddGame = () => {
     const [genre, setGenre] = useState<string>("");
     const [rating, setRating] = useState<number>(0);
     const [image, setImage] = useState<File | null>(null);
+
+
+    const uploadImage = async () => {
+        if (image != null) {
+            ImageUploadService.uploadImage(image);
+        } 
+    }
     
 
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -31,8 +40,11 @@ const AddGame = () => {
                 setRating(parseInt(value));
                 break;
             case "image":
-                setImage(e.target.files![0]);
-                break;
+                const {files} = e.target;
+                if (files != null) {
+                    const file = files[0]
+                setImage(file);
+            }
         }
     };
 
@@ -46,6 +58,11 @@ const AddGame = () => {
         };
         console.log(game);
        await GameService.addGame(game);
+    };
+
+    const submitGame = () => {
+        addGame();
+        uploadImage();
     };
 
     return(
@@ -90,15 +107,15 @@ const AddGame = () => {
                     className="btn" 
                     onChange={changeHandler} 
                     type="file"
-                    name='image'
+                    placeholder="Image"
+                    name="image"
                     />
-
 
                     <input 
                     className="btn" 
                     type="button" 
                     value="Submit"
-                    onClick={addGame} 
+                    onClick={submitGame} 
                     />  
 
                 </form>

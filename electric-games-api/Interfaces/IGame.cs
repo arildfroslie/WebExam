@@ -6,5 +6,5 @@ namespace ElectricGamesApi.Interfaces;
         string Image { get; set; }
         string Platform {get; set;}
         string Genre { get; set; }
-        string Rating { get; set; }
+        int Rating { get; set; }
     }

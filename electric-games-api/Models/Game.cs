@@ -11,5 +11,5 @@ public class Game : IGame
     public string Image { get; set; } = null!;
     public string Genre { get; set; } = null!;
     public string Platform { get; set; } = null!;
-    public string Rating { get; set; } = null!;
+    public int Rating { get; set; }
 }

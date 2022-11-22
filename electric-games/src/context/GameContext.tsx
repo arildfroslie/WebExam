@@ -26,10 +26,14 @@ const GameProvider = ({children} : Props) => {
     const deleteGameById = async (id: number) => {
         await GameService.deleteGame(id);
     }
+
+    const addGame = async (game: IGame) => {
+        await GameService.addGame(game);
+    }
     
 
     return(
-        <GameContext.Provider value={{games, deleteGameById}}>
+        <GameContext.Provider value={{games, deleteGameById, addGame}}>
             {children}
         </GameContext.Provider>
     )

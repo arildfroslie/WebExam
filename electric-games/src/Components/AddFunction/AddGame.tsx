@@ -64,7 +64,6 @@ const AddGame = () => {
     const submitGame = () => {
         addGame();
         uploadImage();
-        window.location.reload();
     };
 
     return(

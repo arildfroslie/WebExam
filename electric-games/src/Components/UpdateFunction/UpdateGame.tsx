@@ -71,19 +71,7 @@ const UpdateGame = () => {
     return(
         <>
             <section className="update-container" id="update-game">
-                <label>Update a {header}:</label><br/>
-                <div className="update-element">
-                    <input 
-                    className="text-input-id" 
-                    type="number" 
-                    placeholder="id" 
-                    onChange={changeHandler}
-                    name='id'
-                    value={id}
-                    />
-
-                </div>
-                
+                <label>Update a {header}:</label>
                 <div className="update-element">
                     <input 
                     className="text-input" 

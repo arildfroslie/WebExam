@@ -1,36 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import GameItem from "./GameItem";
-import GameService from "../../services/GameService";
-import IGame from "../../interfaces/IGame";
 import SearchFunction from "../SearchFunction/SearchFunction";
+import { GameContext } from "../../context/GameContext";
+import IGameContext from "../../interfaces/IGameContext";
+
 
 const GameList = () => {
-  const [Games, setGames] = useState<IGame[]>([]);
+  const {games} = useContext(GameContext) as IGameContext;
   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    const fetchGames = async () => {
-      const Games = await GameService.getGames();
-      setGames(Games);
-    };
-    fetchGames();
-  }, []);
-
   const getGameItems = () => {
-    return Games?.filter((Game) => {
+    return games?.filter((game) => {
       if (!searchTerm) {
         return true
       }
-      return Game.name.toLowerCase().includes(searchTerm.toLowerCase())
-    }).map((Game, i) => (
+      return game.name.toLowerCase().includes(searchTerm.toLowerCase())
+    }).map((game, i) => (
       <GameItem
-        key={`Game-${i}`}
-        id={Game.id}
-        name={Game.name}
-        image={Game.image}
-        platform={Game.platform}
-        genre={Game.genre}
-        rating={Game.rating}
+        key={`game-${i}`}
+        id={game.id}
+        name={game.name}
+        image={game.image}
+        platform={game.platform}
+        genre={game.genre}
+        rating={game.rating}
       />
     ));
   };

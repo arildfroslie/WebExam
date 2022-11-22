@@ -1,6 +1,6 @@
 import { FC } from "react";
 import IPlatform from "../../interfaces/IPlatform";
-import "../../css/Platform.css";
+import DeleteFunction from "../DeleteFunction/DeleteFunction";
 
 const PlatformItem: FC<IPlatform> = ({id, name, image, description }) => {
     const onClickAlert = () => {
@@ -9,16 +9,14 @@ const PlatformItem: FC<IPlatform> = ({id, name, image, description }) => {
     }
     
     return (
-        <article className="platform-item">
+        <article className="output-item">
             <h3>{name}</h3>
-            <img className="platform-image" src={`https://localhost:7119/images/${image}`} alt={name} />
+            <img className="output-image" src={`https://localhost:7119/images/${image}`} alt={name} />
             <p>{description}</p>
-            <span onClick={onClickAlert}>
-                <i className="fa-solid fa-trash fa-xl" />
-            </span>
-            <span onClick={onClickAlert}>
-            <i className="fa-solid fa-pencil fa-xl"></i>
-            </span>
+            <DeleteFunction id={id}/>
+            <button className="icon" >
+                <i className="fa-regular fa-pen-to-square fa-xl"></i>
+            </button>
         </article>
     );
 };

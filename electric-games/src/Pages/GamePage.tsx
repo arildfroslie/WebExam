@@ -8,8 +8,11 @@ const GamePage = () => {
         <>
             <Header />
             <GameList />
-            <AddGame />
-            <UpdateGame />
+            <div className="add-update-container">
+                <AddGame />
+                <UpdateGame />
+            </div>
+            
         </>
     )
 }

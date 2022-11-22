@@ -1,38 +1,28 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useRef } from "react";
 import IGame from "../../interfaces/IGame";
 import GameService from "../../services/GameService";
 import ImageUploadService from "../../services/ImageUploadService";
 import { useLocation } from "react-router-dom";
-import "../../css/UpdateFunction.css";
 
 const UpdateGame = () => {
     const [id, setId] = useState<string>("");
     const [name, setName] = useState<string>("");
     const [platform, setPlatform] = useState<string>("");
     const [genre, setGenre] = useState<string>("");
-    const [rating, setRating] = useState<number>(0);
-    const [image, setImage] = useState<string>("");
-    const [imageURL, setImageURL] = useState<File | null>(null);
+    const [rating, setRating] = useState<number>( 0 ); 
+    const [image, setImage] = useState<File | null>(null);
 
     const {pathname} = useLocation();
     const header = pathname.split("/")[1];
 
     const getGameFromService = async () => {
         const game = await GameService.getGamesById(parseInt(id));
-        console.log(game);
         setName(game.name);
         setPlatform(game.platform);
         setGenre(game.genre);
         setRating(game.rating);
         setImage(game.image);
     };
-
-    const setImageHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        const {files} = e.target;
-        if (files != null) {
-            setImageURL(files[0]);
-        }
-    }
 
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -44,7 +34,11 @@ const UpdateGame = () => {
                 setName(value);
                 break;
             case "image":
-                setImage(value);
+                const {files} = e.target;
+                if (files != null) {
+                    const file = files[0]
+                    setImage(file);
+                }
                 break;
             case "platform":
                 setPlatform(value);
@@ -62,17 +56,18 @@ const UpdateGame = () => {
         const game: IGame = {
             id : parseInt(id),
             name,
-            image,
+            image : image!,
             platform,
             genre,
             rating,
         };
         await GameService.updateGame(game);
+        window.location.reload();
     };
 
     const uploadImage = () => {
-        if( imageURL != null){
-          ImageUploadService.uploadImage( imageURL );
+        if( image != null){
+          ImageUploadService.uploadImage( image );
         }
       }
 
@@ -84,7 +79,7 @@ const UpdateGame = () => {
     return(
         <>
             <section className="update-container">
-                <h3>Update a {header}:</h3>
+                <label>Update a {header}:</label><br/>
                 <div className="update-element">
                     <input 
                     className="text-input-id" 
@@ -96,6 +91,7 @@ const UpdateGame = () => {
                     />
                     <button className="btn" onClick={getGameFromService}>Get Game</button>
                 </div>
+                
                 <div className="update-element">
                     <input 
                     className="text-input" 
@@ -106,10 +102,7 @@ const UpdateGame = () => {
                     value={name}
                     />
                 </div>
-                <div>
-                    <label>Velg bilde</label><br />
-                <input className="btn" onChange={setImageHandler} type="file"/>
-                </div>
+
                 <div className="update-element">
                     <input 
                     className="text-input" 
@@ -120,6 +113,7 @@ const UpdateGame = () => {
                     value={platform}
                     />
                 </div>
+
                 <div className="update-element">
                     <input 
                     className="text-input" 
@@ -130,6 +124,7 @@ const UpdateGame = () => {
                     value={genre}
                     />
                 </div>
+
                 <div className="update-element">
                     <input 
                     className="text-input" 
@@ -140,9 +135,23 @@ const UpdateGame = () => {
                     value={rating}
                     />
                 </div>
+
                 <div className="update-element">
-                    <button className="btn" onClick={uploadImage}>Save Changes</button>
+                    <label>Velg bilde</label><br />
+                <input 
+                    className="btn" 
+                    onChange={changeHandler} 
+                    type="file"
+                    name='image'
+                    />
                 </div>
+
+                <div className="update-element">
+                    <button 
+                    className="btn" 
+                    onClick={editGame}>Save Changes</button>
+                </div>
+
             </section>
         </>
     )

@@ -9,12 +9,12 @@ const CharacterItem: FC<ICharacter> = ({id, name, image, game, description }) =>
     
     return (
         <article className="output-item">
-            <h3>{name}</h3>
+            <h3 className="output-header">{name}</h3>
             <img className="output-image"  src={`https://localhost:7119/images/${image}`} alt={name} />
-            <p>{game}</p>
-            <p>{description}</p>
+            <p className="output-p">{game}</p>
+            <p className="output-p">{description}</p>
             <DeleteCharacter id={id} />
-            <button className="icon"onClick={() =>
+            <button className="edit-icon"onClick={() =>
                 {
                     scrollFunction("update-character")
                     characterContext?.setCharacterToEdit({id, name, image, game, description})

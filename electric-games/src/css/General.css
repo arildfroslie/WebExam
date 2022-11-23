@@ -12,21 +12,42 @@ body{
     width: 50%;
     color: white;
     height: 2rem;
-    border: rgb(70, 161, 35);
     border-radius: 5px;
-    background-color: rgb(70, 161, 35);
+    background-color: rgba(255, 255, 255, 25%);
+    border: 1px solid white;
+    filter: blur(50%);
     margin-top: 5%;
+    transition: transform 0.5s;
+    cursor: pointer;
 }
 
-.add-icon,
-.output-icon, .icon{
+.btn:hover{
+    transform: scale(1.1);
+}
+
+
+/* Icon Styles */
+.add-icon, 
+.delete-icon, 
+.edit-icon{
     background-color: transparent;
     border: none;
     cursor: pointer;
     color: white;
     transition: transform 0.5s;
+    font-size: 1rem;
 }
-.output-icon:hover{
+
+.add-icon{
+    font-size: 3rem;
+}
+
+.delete-icon, 
+.edit-icon{
+    margin: 2rem 2rem;
+}
+
+.delete-icon:hover{
     transform: scale(1.5);
     color: red;
 }
@@ -34,19 +55,9 @@ body{
     transform: scale(1.5);
     color: rgb(70, 161, 35);
 }  
-.icon:hover{
+.edit-icon:hover{
     transform: scale(1.5);
     color: yellow;
-}
-
-.btn-txt-input{
-    margin-left: 3%;
-    color: white;
-    height: 2rem;
-    border: rgb(70, 161, 35);
-    border-radius: 5px;
-    background-color: rgb(70, 161, 35);
-    margin-top: 5%;
 }
 
 /* Navbar Style */
@@ -114,17 +125,17 @@ body{
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 1rem;
-
 }
 
 
-.search-function input{
-    width: 50%;
-    height: 1rem;
+.search-bar{
+    width: 70%;
+    height: 2rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 1.5rem 0.5rem;
     margin: 1rem 0;
+    font-size: 2rem;
 }
 
 
@@ -133,7 +144,7 @@ body{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 1.5rem;
-    margin: 3rem 3rem;
+    margin: 2rem;
 }
 
 .output-item{
@@ -158,17 +169,12 @@ body{
     margin: 0;
 }
 
-.output-icon{
-    margin: 2rem 2rem;
-}
-
 /* Add/Update Style*/
 .add-update-container{
     display: grid;
     text-align: center;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1rem;
-    margin: 5rem 0;
+    margin: 6rem 0;
 }
 .add-container,
 .update-container{

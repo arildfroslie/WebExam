@@ -15,17 +15,21 @@
         margin: 0 1rem;
     }
 
-
-    /* Icon Style */
-    .icon{
-        height: 2rem;
-        margin: 5rem;
-    }
-
     /* Button Style */
     .btn{
         height: 5rem;
         font-size: 2rem;
+    }
+    /* Icon Style */
+    .delete-icon, .edit-icon{
+        height: 2rem;
+        margin: 5rem;
+        font-size: 3rem;
+        margin: 8rem 5rem;
+    }
+    .add-icon{
+        font-size: 3rem;
+        margin-left: 1rem;
     }
 
     /* Header Style */
@@ -41,10 +45,6 @@
     }
     .search-bar{
         font-size: 2rem;
-    }
-    .add-icon{
-        font-size: 3rem;
-        margin-left: 1rem;
     }
 
 
@@ -63,13 +63,6 @@
     .output-p{
         font-size: 2rem;
     }
-    .output-icon{
-        font-size: 3rem;
-        margin: 8rem 5rem;
-
-    }
-
-
 
     /* Add Function Style */
     .add-container{

@@ -120,6 +120,7 @@ body{
     grid-gap: 1rem;
     margin-bottom: 3rem;
 }
+
 .add-update-container{
     display: grid;
     justify-content: center;

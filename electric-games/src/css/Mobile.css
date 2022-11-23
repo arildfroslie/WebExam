@@ -25,21 +25,39 @@
     /* Header Style */
     .header-title{
         margin-top: 18%;
+        font-size: 8rem;
+    }
+
+    /* SearchBar Style */
+    .search-bar{
+
     }
 
 
     /* Output Style */
-    .output-item, .add-container, .update-container{
+    .output-item{
+        grid-column: auto / span 12;
+        margin-top: 5rem;
+        height: 1200px;
+    }
+    .output-header{
+        font-size: 3rem;
+    }
+    .output-p{
+        font-size: 2rem;
+    }
+    .output-icon{
+        font-size: 3rem;
+        margin: 8rem 5rem;
+
+    }
+
+
+
+
+    .add-container, .update-container{
         grid-column: auto / span 12;
     }
     
-    .output-item{
-        margin: 2rem 4rem;
-    }
-    .output-image{
-        width: 50%;
-        height: 50%;
-        border-radius: 2rem;
-    }
     
 }

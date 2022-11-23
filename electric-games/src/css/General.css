@@ -18,7 +18,8 @@ body{
     margin-top: 5%;
 }
 
-.icon{
+.add-icon,
+.output-icon{
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -40,15 +41,6 @@ body{
     margin-top: 5%;
 }
 
-
-/* Header Style */
-
-.header-title{  
-    font-size: 2rem;
-    text-align: center;
-    color: white;
-    margin-top: 9%;
-}
 /* Navbar Style */
 .nav{
     background-color: rgb(139, 90, 255);
@@ -95,38 +87,38 @@ body{
     margin-right: 0.5rem;
 }
 
+
+/* Header Style */
+
+.header-title{  
+    font-size: 4rem;
+    text-align: center;
+    color: white;
+    margin: 8% 0 0 0;
+}
+
 /* Search Bar Style */
-.search-bar{
+.search-function{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin-bottom: 1rem;
 
 }
-.search-bar .icon{
-    margin: 0 2rem ;
+.add-icon{
+
 }
 
 
-.search-bar input{
+.search-function input{
     width: 50%;
     height: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 1.5rem 0.5rem;
     margin: 1rem 0;
-
 }
 
-
-/* Grid style */
-.output-container{
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1rem;
-    margin-bottom: 3rem;
-}
 
 .add-update-container{
     display: grid;
@@ -143,25 +135,37 @@ body{
 
 
 /* Output Style */
+.output-container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.5rem;
+    margin: 3rem 3rem;
+}
+
 .output-item{
-    position: relative;
-    grid-column: auto / span 3;
-    border-radius: 25px;
+    height: 100%;
+    width: 100%;
+    grid-column: auto /span 3;
     text-align: center;
-    margin: 0 2rem;
-    background-color: #8EC5FC;
+    border-radius: 2rem;
     background-image: linear-gradient(0deg, #8EC5FC 0%, #E0C3FC 100%);
     color: white;    
     box-shadow: 0 0 20px 0px #000000;
 }
-.output-item i{
-    margin: 0 2rem;
-    cursor: pointer;
+.output-header{
+    margin-bottom: 0.5rem;
 }
 .output-image{
-    width: 75%;
-    height: 40%;
+    width: 70%;
+    height:50%;
     border-radius: 2rem;
+}
+.output-p{
+    margin: 0;
+}
+
+.output-icon{
+    margin: 2rem 2rem;
 }
 
 

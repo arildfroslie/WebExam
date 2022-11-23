@@ -15,7 +15,7 @@ const DeletePlatform: FC< Pick<IPlatform,"id">> = ({id}) => {
     }
 
     return(
-            <button className="icon" onClick={deletePlatform}>
+            <button className="output-icon" onClick={deletePlatform}>
                 <i className="fa-regular fa-trash-can fa-xl"></i>
             </button>
     )

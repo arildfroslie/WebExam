@@ -19,16 +19,24 @@ body{
 }
 
 .add-icon,
-.output-icon{
+.output-icon, .icon{
     background-color: transparent;
     border: none;
     cursor: pointer;
     color: white;
     transition: transform 0.5s;
 }
-.icon:hover{
+.output-icon:hover{
     transform: scale(1.5);
     color: red;
+}
+.add-icon:hover{
+    transform: scale(1.5);
+    color: rgb(70, 161, 35);
+}  
+.icon:hover{
+    transform: scale(1.5);
+    color: yellow;
 }
 
 .btn-txt-input{

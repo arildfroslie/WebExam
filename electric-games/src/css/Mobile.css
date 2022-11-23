@@ -1,0 +1,45 @@
+@media screen and (max-width: 768px){
+    /*NavBar Style*/
+    .nav{
+        height: 7rem;
+    }
+
+    .nav-title{
+        display: none;
+    }
+    .navbar i{
+        font-size: 3rem;
+    }
+
+    .nav a{
+        margin: 0 1rem;
+    }
+
+
+    /* Icon Style */
+    .icon{
+        height: 2rem;
+        margin: 5rem;
+    }
+
+    /* Header Style */
+    .header-title{
+        margin-top: 18%;
+    }
+
+
+    /* Output Style */
+    .output-item, .add-container, .update-container{
+        grid-column: auto / span 12;
+    }
+    
+    .output-item{
+        margin: 2rem 4rem;
+    }
+    .output-image{
+        width: 50%;
+        height: 50%;
+        border-radius: 2rem;
+    }
+    
+}

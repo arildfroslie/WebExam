@@ -83,13 +83,16 @@ const UpdateCharacter = () => {
     const submitChange = () => {
         editCharacter();
         uploadImage();
-
+        window.location.reload();
     }
 
     return(
 
         <section className="update-container" id="update-character">
-            <label>Update a {header}:</label>
+            <label
+                className="add-header">
+                Update {header}:
+            </label>
 
             <input 
                 className="text-input" 

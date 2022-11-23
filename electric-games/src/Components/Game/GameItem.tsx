@@ -9,20 +9,20 @@ const GameItem: FC<IGame> = ({id, name, image, platform, genre, rating }) => {
 
     return (
         <article className="output-item">
-            <h3>{name}</h3>
+            <h3 className="output-header">{name}</h3>
             <img className="output-image" src={`https://localhost:7119/images/${image}`} alt={name} />
-            <p>Platform: {platform}</p>
-            <p>Genre: {genre}</p>
-            <p>Rating: {rating}%</p>
-            
+            <p className="output-p">Platform: {platform}</p>
+            <p className="output-p">Genre: {genre}</p>
+            <p className="output-p">Rating: {rating}%</p>
+        
             <DeleteFunction id={id}/>
-            <button className="icon"  onClick={() =>
-                {
-                    scrollFunction("update-game")
-                    gameContext?.setGameToEdit({id, name, image, platform, genre, rating})
-                }}>
-                <i className="fa-regular fa-pen-to-square fa-xl"></i>
-        </button>
+                <button className="edit-icon"  onClick={() =>
+                    {
+                        scrollFunction("update-game")
+                        gameContext?.setGameToEdit({id, name, image, platform, genre, rating})
+                    }}>
+                    <i className="fa-regular fa-pen-to-square fa-xl"></i>
+                </button>
         </article>
     );
 };

@@ -51,18 +51,22 @@ const AddPlatform = () => {
     const submitPlatform = () => {
         AddPlatform();
         uploadImage();
+        window.location.reload();
     };
 
     return(
         <>
             <section className="add-container" id="add-function">
 
-                    <label>Add a {header}:</label>
+                <label
+                    className="add-header"
+                    >Add a {header}:
+                </label> 
 
                     <input 
                     className="text-input" 
                     type="text" 
-                    placeholder="Title"
+                    placeholder="Name"
                     name="name"
                     onChange={changeHandler}
                     />

@@ -62,56 +62,62 @@ const AddGame = () => {
     const submitGame = () => {
         addGame();
         uploadImage();
+        window.location.reload();
     };
 
     return(
         <section className="add-container" id="add-function">
-            <label>Add a {header}:</label><br/>
+
+           <label
+                className="add-header"
+                >Add a {header}:
+            </label> 
+
             <input 
-            className="text-input" 
-            type="text" 
-            placeholder="Title"
-            name="name"
-            onChange={changeHandler}
+                className="text-input" 
+                type="text" 
+                placeholder="Title"
+                name="name"
+                onChange={changeHandler}
             />
 
             <input 
-            className="text-input" 
-            type="text" 
-            placeholder="Platform" 
-            name="platform"
-            onChange={changeHandler}
+                className="text-input" 
+                type="text" 
+                placeholder="Platform" 
+                name="platform"
+                onChange={changeHandler}
             />
 
             <input 
-            className="text-input" 
-            type="text" 
-            placeholder="Genre"
-            name="genre"
-            onChange={changeHandler} 
+                className="text-input" 
+                type="text" 
+                placeholder="Genre"
+                name="genre"
+                onChange={changeHandler} 
             />
 
             <input 
-            className="text-input" 
-            type="text" 
-            placeholder="Rating" 
-            name="rating"
-            onChange={changeHandler}
+                className="text-input" 
+                type="text" 
+                placeholder="Rating" 
+                name="rating"
+                onChange={changeHandler}
             /> 
 
             <input 
-            className="file-input" 
-            onChange={changeHandler} 
-            type="file"
-            placeholder="Image"
-            name="image"
+                className="file-input" 
+                onChange={changeHandler} 
+                type="file"
+                placeholder="Image"
+                name="image"
             />
 
             <input 
-            className="btn" 
-            type="button" 
-            value="Submit"
-            onClick={submitGame} 
+                className="btn" 
+                type="button" 
+                value="Submit"
+                onClick={submitGame} 
             />  
         </section>
     )

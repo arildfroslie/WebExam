@@ -1,0 +1,84 @@
+@media screen and (max-width: 768px){
+    /*NavBar Style*/
+    .nav{
+        height: 7rem;
+    }
+
+    .nav-title{
+        display: none;
+    }
+    .navbar i{
+        font-size: 3rem;
+    }
+
+    .nav a{
+        margin: 0 1rem;
+    }
+
+    /* Button Style */
+    .btn{
+        height: 5rem;
+        font-size: 2rem;
+    }
+    /* Icon Style */
+    .delete-icon, .edit-icon{
+        height: 2rem;
+        margin: 5rem;
+        font-size: 3rem;
+        margin: 8rem 5rem;
+    }
+    .add-icon{
+        font-size: 3rem;
+        margin-left: 1rem;
+    }
+
+    /* Header Style */
+    .header-title{
+        margin-top: 18%;
+        font-size: 8rem;
+    }
+
+    /* SearchBar Style */
+    .search-function{
+        justify-content: center;
+        height: 8rem;
+    }
+    .search-bar{
+        font-size: 2rem;
+    }
+
+
+    /* Output Style */
+    .output-container{
+        margin-top: 0;
+    }
+    .output-item{
+        grid-column: auto / span 12;
+        margin-top: 5rem;
+        height: 1200px;
+    }
+    .output-header{
+        font-size: 3rem;
+    }
+    .output-p{
+        font-size: 2rem;
+    }
+
+    /* Add Function Style */
+    .add-container{
+        grid-column: auto / span 12;
+    }
+    .add-header{
+    }
+    .text-input{
+        font-size: 2rem;
+        height: 6rem;
+    }
+
+    /* Update Function Style */
+    .update-container{
+        grid-column: auto / span 12;
+    }
+    
+    
+}

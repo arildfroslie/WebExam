@@ -1,4 +1,5 @@
-import "./App.css";
+import "./css/General.css"
+import "./css/Mobile.css"
 
 import {Navbar} from './components/Navbar/Navbar';
 

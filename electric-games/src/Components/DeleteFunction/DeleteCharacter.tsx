@@ -15,7 +15,7 @@ const DeleteCharacter: FC< Pick<ICharacter,"id">> = ({id}) => {
     }
 
     return(
-            <button className="icon" onClick={deleteCharacter}>
+            <button className="delete-icon" onClick={deleteCharacter}>
                 <i className="fa-regular fa-trash-can fa-xl"></i>
             </button>
     )

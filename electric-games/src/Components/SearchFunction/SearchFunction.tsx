@@ -17,14 +17,15 @@ const SearchFunction : FC<ISearch> = ({onChange}) => {
 
   return (
     <>
-      <div className="search-bar">
+      <div className="search-function">
           <input
+            className="search-bar"
             type="text"
             placeholder="Search..."
             value={searchTerm}
             onChange={handleChange}
           />
-          <div className="icon" onClick={() =>{scrollFunction("add-function")}}>
+          <div className="add-icon" onClick={() =>{scrollFunction("add-function")}}>
             <i className="fa-regular fa-square-plus fa-xl"></i>
           </div>
       </div>

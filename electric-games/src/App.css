@@ -4,7 +4,7 @@ body{
     margin: 0;
     font-family: 'Comic Neue', cursive;
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(255, 255, 255);
+    background: linear-gradient(to right, rgb(185, 147, 214), rgb(140, 166, 219));
 }
 
 /* Btn Styles */
@@ -14,17 +14,17 @@ body{
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: rgb(70, 161, 35);
-    box-shadow: 2px 3px 4px lightgrey;
+    box-shadow: 0 0 20px 1px #000000;
     margin-top: 5%;
 }
 .btn-submit, .btn-save{
     width: 50%;
     color: white;
     height: 2rem;
-    border: 1px solid #ccc;
+    border: rgb(70, 161, 35);
     border-radius: 5px;
     background-color: rgb(70, 161, 35);
-    box-shadow: 2px 3px 4px lightgrey;
+
     margin-top: 5%;
 }
 .btn-img{
@@ -39,22 +39,21 @@ body{
     margin-left: 3%;
     color: white;
     height: 2rem;
-    border: 1px solid #ccc;
+    border: rgb(70, 161, 35);
     border-radius: 5px;
     background-color: rgb(70, 161, 35);
-    box-shadow: 2px 3px 4px lightgrey;
     margin-top: 5%;
 }
 
 
 /* Header Style */
-.header-title{    
+
+.header-title{  
     font-size: 2rem;
     text-align: center;
     color: white;
-
+    margin-top: 9%;
 }
-
 /* Navbar Style */
 .nav{
     background-color: rgb(120, 28, 241);
@@ -62,9 +61,13 @@ body{
     justify-content: space-between;
     align-items: stretch;
     gap: 2rem;
-    padding: 0 1rem;
+    padding: -1rem;
     color: white;
     border-radius: 0 0 10px 10px ;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0%;
 }
 
 .logo{
@@ -113,10 +116,10 @@ body{
     width: 50%;
     height: 1rem;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 1.5rem 0.5rem;
     margin: 1rem 0;
-    box-shadow: 5px 5px 5px lightgrey;
+
 }
 
 
@@ -147,11 +150,13 @@ body{
     position: relative;
     grid-column: auto / span 3;
     height: 100%;
-    border: 2px solid #ccc;
     border-radius: 25px;
     text-align: center;
     margin: 0 2rem;
-    box-shadow: 5px 5px 5px lightgrey;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(0deg, #8EC5FC 0%, #E0C3FC 100%);
+    color: white;    
+    box-shadow: 0 0 20px 0.5px #000000;
 }
 .output-item i{
     margin: 0 2rem;
@@ -187,10 +192,10 @@ body{
     width: 100%;
     height: 2rem;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 1.5rem 0.5rem;
     margin: 1rem 0;
-    box-shadow: 5px 5px 5px lightgrey;
+
 }
 .text-input-id{
     width: 50%;
@@ -232,6 +237,9 @@ body{
     .icon{
         height: 2rem;
         margin: 5rem;
+    }
+    .header-title{
+        margin-top: 18%;
     }
     
 }

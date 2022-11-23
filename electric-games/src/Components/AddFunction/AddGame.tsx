@@ -108,7 +108,7 @@ const AddGame = () => {
             />
 
             <input 
-            className="btn-submit" 
+            className="btn" 
             type="button" 
             value="Submit"
             onClick={submitGame} 

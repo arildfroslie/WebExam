@@ -141,7 +141,7 @@ const UpdateGame = () => {
 
 
             <button 
-            className="btn-save" 
+            className="btn" 
             onClick={submitChange}>
             Save Changes
             </button>

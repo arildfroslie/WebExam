@@ -1,7 +1,8 @@
-import { useState, ChangeEvent, useRef } from "react";
+import { useState, ChangeEvent, useContext, useEffect } from "react";
 import ICharacter from "../../interfaces/ICharacter";
 import CharacterService from "../../services/CharacterService";
 import { useLocation } from "react-router-dom";
+import { CharacterContext } from "../../context/CharacterContext";
 
 const UpdateCharacter = () => {
     const [id, setId] = useState<string>("");
@@ -13,13 +14,23 @@ const UpdateCharacter = () => {
     const {pathname} = useLocation();
     const header = pathname.split("/")[1];
 
-    const getcharacterFromService = async () => {
-        const character = await CharacterService.getCharacterById(parseInt(id));
+    const characterContext = useContext(CharacterContext);
+
+    const getCharacterFromService = async (id: number) => {
+        console.log("I am trying to get:" + id);
+        const character = await CharacterService.getCharacterById(id);
         setName(character.name);
         setGame(character.game);
         setDescription(character.description);
         setImage(character.image);
     };
+
+    useEffect(()=> {
+        if (characterContext?.characterToEdit && characterContext.characterToEdit.id) {
+            getCharacterFromService(characterContext?.characterToEdit.id)
+            
+        }
+    },[characterContext?.characterToEdit?.id]);
 
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -53,20 +64,8 @@ const UpdateCharacter = () => {
 
     return(
         <>
-            <section className="update-container">
-                <label>Update a {header}:</label><br/>
-                <div className="update-element">
-                    <input 
-                    className="text-input-id" 
-                    type="number" 
-                    placeholder="id" 
-                    onChange={changeHandler}
-                    name='id'
-                    value={id}
-                    />
-                    <button className="btn" onClick={getcharacterFromService}>Get character</button>
-                </div>
-                
+            <section className="update-container" id="update-character">
+                <label>Update a {header}:</label>
                 <div className="update-element">
                     <input 
                     className="text-input" 

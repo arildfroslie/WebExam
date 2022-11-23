@@ -4,7 +4,7 @@ import ICharacter from "../interfaces/ICharacter";
 const CharacterService = (
     () => {
         const endpoints = {
-            "Characters": "https://localhost:7119/Character",
+            "Characters": "https://localhost:7119/character",
         }
     
        const getCharacters = async () => {

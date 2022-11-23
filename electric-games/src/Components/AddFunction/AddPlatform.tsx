@@ -57,7 +57,7 @@ const AddPlatform = () => {
 
     return(
         <>
-            <section className="add-function">
+            <section className="add-function" id="add-function">
                 <form className="add-function-form">
 
                     <label>Add a {header}:</label><br/>

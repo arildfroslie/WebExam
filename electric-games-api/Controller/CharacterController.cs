@@ -35,18 +35,6 @@ public class CharacterController : ControllerBase
         }
         return Character;
     }
-    
-    [HttpGet("{name}")] 
-    public async Task<ActionResult<Character>> Get(string name)
-    {
-        Character? Character = await context.Characters.FindAsync(name);
-        if (Character == null)
-        {
-            return NotFound();
-        }
-        return Character;
-    }
-
 
     [HttpDelete ("{id}")]
     public async Task<ActionResult<Character>> Delete(int id)

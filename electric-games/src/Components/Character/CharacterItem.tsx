@@ -1,13 +1,11 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
+import { CharacterContext } from "../../context/CharacterContext";
 import ICharacter from "../../interfaces/ICharacter";
-import DeleteFunction from "../DeleteFunction/DeleteFunction";
+import DeleteCharacter from "../DeleteFunction/DeleteCharacter";
+import scrollFunction from "../ScrollFunction/ScrollFunction";
 
 const CharacterItem: FC<ICharacter> = ({id, name, image, game, description }) => {
-
-    const onClickAlert = () => {
-        const message = alert(`You clicked on ${name}!`);
-        return message;
-    }
+    const characterContext = useContext(CharacterContext);
     
     return (
         <article className="output-item">
@@ -15,8 +13,12 @@ const CharacterItem: FC<ICharacter> = ({id, name, image, game, description }) =>
             <img className="output-image"  src={`https://localhost:7119/images/${image}`} alt={name} />
             <p>{game}</p>
             <p>{description}</p>
-            <DeleteFunction id={id}/>
-            <button className="icon" >
+            <DeleteCharacter id={id} />
+            <button className="icon"onClick={() =>
+                {
+                    scrollFunction("update-character")
+                    characterContext?.setCharacterToEdit({id, name, image, game, description})
+                }}> 
                 <i className="fa-regular fa-pen-to-square fa-xl"></i>
             </button>
         </article>

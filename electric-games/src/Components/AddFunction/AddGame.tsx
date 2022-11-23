@@ -67,61 +67,55 @@ const AddGame = () => {
     };
 
     return(
-        <>
-            <section className="add-function">
-                <form className="add-function-form">
+        <section className="add-container" id="add-function">
+            <label>Add a {header}:</label><br/>
+            <input 
+            className="text-input" 
+            type="text" 
+            placeholder="Title"
+            name="name"
+            onChange={changeHandler}
+            />
 
-                    <label>Add a {header}:</label><br/>
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Title"
-                    name="name"
-                    onChange={changeHandler}
-                    />
+            <input 
+            className="text-input" 
+            type="text" 
+            placeholder="Platform" 
+            name="platform"
+            onChange={changeHandler}
+            />
 
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Platform" 
-                    name="platform"
-                    onChange={changeHandler}
-                    />
+            <input 
+            className="text-input" 
+            type="text" 
+            placeholder="Genre"
+            name="genre"
+            onChange={changeHandler} 
+            />
 
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Genre"
-                    name="genre"
-                    onChange={changeHandler} 
-                    />
+            <input 
+            className="text-input" 
+            type="text" 
+            placeholder="Rating" 
+            name="rating"
+            onChange={changeHandler}
+            /> 
 
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Rating" 
-                    name="rating"
-                    onChange={changeHandler}
-                    /> 
+            <input 
+            className="btn" 
+            onChange={changeHandler} 
+            type="file"
+            placeholder="Image"
+            name="image"
+            />
 
-                    <input 
-                    className="btn-img" 
-                    onChange={changeHandler} 
-                    type="file"
-                    placeholder="Image"
-                    name="image"
-                    />
-
-                    <input 
-                    className="btn-submit" 
-                    type="button" 
-                    value="Submit"
-                    onClick={submitGame} 
-                    />  
-
-                </form>
-            </section>
-        </>
+            <input 
+            className="btn-submit" 
+            type="button" 
+            value="Submit"
+            onClick={submitGame} 
+            />  
+        </section>
     )
 }
 

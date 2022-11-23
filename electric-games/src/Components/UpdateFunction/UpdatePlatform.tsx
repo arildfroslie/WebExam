@@ -1,7 +1,8 @@
-import { useState, ChangeEvent, useRef } from "react";
+import { useState, ChangeEvent, useRef, useContext, useEffect } from "react";
 import IPlatform from "../../interfaces/IPlatform";
 import PlatformService from "../../services/PlatformService";
 import { useLocation } from "react-router-dom";
+import { PlatformContext } from "../../context/PlatformContext";
 
 const UpdatePlatform = () => {
     const [id, setId] = useState<string>("");
@@ -12,12 +13,21 @@ const UpdatePlatform = () => {
     const {pathname} = useLocation();
     const header = pathname.split("/")[1];
 
-    const getPlatformFromService = async () => {
-        const platform = await PlatformService.getPlatformById(parseInt(id));
+    const platformContext = useContext(PlatformContext);
+
+    const getPlatformFromService = async (id: number) => {
+        console.log("I am trying to get:" + id);
+        const platform = await PlatformService.getPlatformById(id);
         setName(platform.name);
         setDescription(platform.description);
         setImage(platform.image);
     };
+
+    useEffect(()=> {
+        if (platformContext?.platformToEdit && platformContext.platformToEdit.id) {
+            getPlatformFromService(platformContext?.platformToEdit.id) 
+        }
+    },[platformContext?.platformToEdit?.id]);
 
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -47,20 +57,8 @@ const UpdatePlatform = () => {
 
     return(
         <>
-            <section className="update-container">
-                <label>Update a {header}:</label><br/>
-                <div className="update-element">
-                    <input 
-                    className="text-input-id" 
-                    type="number" 
-                    placeholder="id" 
-                    onChange={changeHandler}
-                    name='id'
-                    value={id}
-                    />
-                    <button className="btn" onClick={getPlatformFromService}>Get Platform</button>
-                </div>
-                
+            <section className="update-container" id="update-platform">
+                <label>Update a {header}:</label>
                 <div className="update-element">
                     <input 
                     className="text-input" 

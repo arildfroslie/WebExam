@@ -1,11 +1,14 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import IGame from "../../interfaces/IGame";
-import DeleteFunction from "../DeleteFunction/DeleteFunction";
-import ScrollToUpdate from "../UpdateFunction/ScrollToUpdate";
+import DeleteFunction from "../DeleteFunction/DeleteGame";
+import scrollFunction from "../ScrollFunction/ScrollFunction";
+import { GameContext } from "../../context/GameContext";
 
 const GameItem: FC<IGame> = ({id, name, image, platform, genre, rating }) => {
+    const gameContext = useContext(GameContext);
+
     return (
-        <article className="output-item" id={String(id)}>
+        <article className="output-item">
             <h3>{name}</h3>
             <img className="output-image" src={`https://localhost:7119/images/${image}`} alt={name} />
             <p>Platform: {platform}</p>
@@ -13,7 +16,13 @@ const GameItem: FC<IGame> = ({id, name, image, platform, genre, rating }) => {
             <p>Rating: {rating}%</p>
             
             <DeleteFunction id={id}/>
-            <ScrollToUpdate />
+            <button className="icon"  onClick={() =>
+                {
+                    scrollFunction("update-game")
+                    gameContext?.setGameToEdit({id, name, image, platform, genre, rating})
+                }}>
+                <i className="fa-regular fa-pen-to-square fa-xl"></i>
+        </button>
         </article>
     );
 };

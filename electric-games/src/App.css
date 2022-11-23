@@ -139,7 +139,7 @@ body{
     margin: 5rem 0;
 }
 
-.add-function,
+.add-container,
 .update-container{
     grid-column: auto /span 6;
 }
@@ -171,7 +171,7 @@ body{
 
 
 /* Add Function Style */
-.add-function{
+.add-container{
     margin: 0 25% 2rem;
 }
 .add-function-form{
@@ -182,8 +182,6 @@ body{
 /* Update Function Style */
 .update-container{
     margin: 0 25% 2rem;
-}
-.update-element{
     text-align: center;
 }
 
@@ -211,7 +209,7 @@ body{
 
 /* Media Styles */
 @media screen and (max-width: 768px){
-    .output-item, .add-function, .update-container{
+    .output-item, .add-container, .update-container{
         grid-column: auto / span 12;
     }   
     .output-image{

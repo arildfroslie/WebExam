@@ -15,7 +15,7 @@ const DeleteGame: FC< Pick<IGame,"id">> = ({id}) => {
     }
 
     return(
-            <button className="output-icon" onClick={deleteGame}>
+            <button className="delete-icon" onClick={deleteGame}>
                 <i className="fa-regular fa-trash-can fa-xl"></i>
             </button>
     )

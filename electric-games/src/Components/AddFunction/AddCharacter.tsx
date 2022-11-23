@@ -56,6 +56,7 @@ const AddCharacter = () => {
     const submitCharacter = () => {
         AddCharacter();
         uploadImage();
+        window.location.reload();
     };
 
     return(

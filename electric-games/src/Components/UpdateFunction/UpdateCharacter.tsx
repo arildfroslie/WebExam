@@ -83,7 +83,7 @@ const UpdateCharacter = () => {
     const submitChange = () => {
         editCharacter();
         uploadImage();
-
+        window.location.reload();
     }
 
     return(

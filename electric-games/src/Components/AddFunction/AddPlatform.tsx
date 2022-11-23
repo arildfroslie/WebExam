@@ -51,6 +51,7 @@ const AddPlatform = () => {
     const submitPlatform = () => {
         AddPlatform();
         uploadImage();
+        window.location.reload();
     };
 
     return(
@@ -65,7 +66,7 @@ const AddPlatform = () => {
                     <input 
                     className="text-input" 
                     type="text" 
-                    placeholder="Title"
+                    placeholder="Name"
                     name="name"
                     onChange={changeHandler}
                     />

@@ -10,11 +10,11 @@ const PlatformItem: FC<IPlatform> = ({id, name, image, description }) => {
     
     return (
         <article className="output-item">
-            <h3>{name}</h3>
+            <h3 className="output-header">{name}</h3>
             <img className="output-image" src={`https://localhost:7119/images/${image}`} alt={name} />
-            <p>{description}</p>
+            <p className="output-p">{description}</p>
             <DeletePlatform id={id}/>
-            <button className="icon" onClick={() =>
+            <button className="edit-icon" onClick={() =>
                 {
                     scrollFunction("update-platform")
                     platformContext?.setPlatformToEdit({id, name, image, description})

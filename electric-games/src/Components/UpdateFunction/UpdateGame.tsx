@@ -10,7 +10,7 @@ const UpdateGame = () => {
     const [name, setName] = useState<string>("");
     const [platform, setPlatform] = useState<string>("");
     const [genre, setGenre] = useState<string>("");
-    const [rating, setRating] = useState<number>( 0 ); 
+    const [rating, setRating] = useState<number>(0); 
     const [image, setImage] = useState<string>("");
     const [imageFile, setImageFile] = useState<File | null>(null);
 
@@ -87,6 +87,7 @@ const UpdateGame = () => {
     const submitChange = () => {
         editGame();
         uploadImage();
+        window.location.reload();
     }
 
     return(

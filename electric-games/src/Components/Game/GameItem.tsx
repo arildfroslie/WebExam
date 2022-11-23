@@ -16,7 +16,7 @@ const GameItem: FC<IGame> = ({id, name, image, platform, genre, rating }) => {
             <p className="output-p">Rating: {rating}%</p>
         
             <DeleteFunction id={id}/>
-                <button className="icon"  onClick={() =>
+                <button className="edit-icon"  onClick={() =>
                     {
                         scrollFunction("update-game")
                         gameContext?.setGameToEdit({id, name, image, platform, genre, rating})

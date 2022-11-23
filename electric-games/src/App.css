@@ -44,7 +44,7 @@ body{
 }
 /* Navbar Style */
 .nav{
-    background-color: rgb(120, 28, 241);
+    background-color: rgb(139, 90, 255);
     display: flex;
     justify-content: space-between;
     align-items: stretch;
@@ -144,7 +144,7 @@ body{
     background-color: #8EC5FC;
     background-image: linear-gradient(0deg, #8EC5FC 0%, #E0C3FC 100%);
     color: white;    
-    box-shadow: 0 0 20px 0.5px #000000;
+    box-shadow: 0 0 20px 0px #000000;
 }
 .output-item i{
     margin: 0 2rem;

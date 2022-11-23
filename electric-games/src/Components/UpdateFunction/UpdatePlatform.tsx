@@ -81,7 +81,11 @@ const UpdatePlatform = () => {
     return(
     
     <section className="update-container" id="update-platform">
-        <label>Update a {header}:</label>
+        <label
+            className="add-header">
+            Update {header}:
+        </label>
+
         <input 
             className="text-input" 
             type="text" 

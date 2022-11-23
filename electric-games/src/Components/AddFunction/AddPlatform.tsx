@@ -57,7 +57,10 @@ const AddPlatform = () => {
         <>
             <section className="add-container" id="add-function">
 
-                    <label>Add a {header}:</label>
+                <label
+                    className="add-header"
+                    >Add a {header}:
+                </label> 
 
                     <input 
                     className="text-input" 

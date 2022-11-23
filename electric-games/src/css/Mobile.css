@@ -22,6 +22,12 @@
         margin: 5rem;
     }
 
+    /* Button Style */
+    .btn{
+        height: 5rem;
+        font-size: 2rem;
+    }
+
     /* Header Style */
     .header-title{
         margin-top: 18%;
@@ -29,12 +35,23 @@
     }
 
     /* SearchBar Style */
+    .search-function{
+        justify-content: center;
+        height: 8rem;
+    }
     .search-bar{
-
+        font-size: 2rem;
+    }
+    .add-icon{
+        font-size: 3rem;
+        margin-left: 1rem;
     }
 
 
     /* Output Style */
+    .output-container{
+        margin-top: 0;
+    }
     .output-item{
         grid-column: auto / span 12;
         margin-top: 5rem;
@@ -54,8 +71,19 @@
 
 
 
+    /* Add Function Style */
+    .add-container{
+        grid-column: auto / span 12;
+    }
+    .add-header{
+    }
+    .text-input{
+        font-size: 2rem;
+        height: 6rem;
+    }
 
-    .add-container, .update-container{
+    /* Update Function Style */
+    .update-container{
         grid-column: auto / span 12;
     }
     

@@ -91,7 +91,10 @@ const UpdateGame = () => {
 
     return(
         <section className="update-container" id="update-game">
-            <label>Update a {header}:</label>
+            <label
+                className="add-header">
+                Update {header}:
+            </label>
 
 
             <input 

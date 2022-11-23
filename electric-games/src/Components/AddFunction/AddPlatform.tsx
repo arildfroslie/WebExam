@@ -39,7 +39,6 @@ const AddPlatform = () => {
             image,
             description
         };
-        console.log(platform);
        await PlatformService.addPlatform(platform);
     };
 
@@ -47,7 +46,6 @@ const AddPlatform = () => {
         if (image != null) {
             ImageUploadService.uploadImage(imageFile!);
         } 
-        console.log(imageFile?.name);
     }
 
     const submitPlatform = () => {
@@ -57,10 +55,10 @@ const AddPlatform = () => {
 
     return(
         <>
-            <section className="add-function" id="add-function">
-                <form className="add-function-form">
+            <section className="add-container" id="add-function">
 
-                    <label>Add a {header}:</label><br/>
+                    <label>Add a {header}:</label>
+
                     <input 
                     className="text-input" 
                     type="text" 
@@ -78,7 +76,7 @@ const AddPlatform = () => {
                     />
 
                     <input 
-                    className="btn" 
+                    className="file-input" 
                     onChange={changeHandler} 
                     type="file"
                     placeholder="Image"
@@ -92,7 +90,6 @@ const AddPlatform = () => {
                     onClick={submitPlatform} 
                     />  
 
-                </form>
             </section>
         </>
     )

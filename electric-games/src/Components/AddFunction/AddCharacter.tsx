@@ -44,7 +44,6 @@ const AddCharacter = () => {
             game,
             description
         };
-        console.log(character);
        await CharacterService.addCharacter(character);
     };
 
@@ -52,62 +51,58 @@ const AddCharacter = () => {
         if (image != null) {
             ImageUploadService.uploadImage(imageFile!);
         } 
-        console.log(imageFile?.name);
     }
 
-    const submitcharacter = () => {
+    const submitCharacter = () => {
         AddCharacter();
         uploadImage();
     };
 
     return(
-        <>
-            <section className="add-function" id="add-function">
-                <form className="add-function-form">
+        <section className="add-container" id="add-function">
 
-                    <label>Add a {header}:</label><br/>
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Name"
-                    name="name"
-                    onChange={changeHandler}
-                    />
+                <label>Add a {header}:</label>
 
-                    <input
-                    className="text-input"
-                    type="text"
-                    placeholder="Game"
-                    name="game"
-                    onChange={changeHandler}
-                    />
+                <input 
+                className="text-input" 
+                type="text" 
+                placeholder="Name"
+                name="name"
+                onChange={changeHandler}
+                />
 
-                    <input
-                    className="text-input"
-                    type="text"
-                    placeholder="Description"
-                    name="description"
-                    onChange={changeHandler}
-                    />
+                <input
+                className="text-input"
+                type="text"
+                placeholder="Game"
+                name="game"
+                onChange={changeHandler}
+                />
 
-                    <input 
-                    className="btn" 
-                    onChange={changeHandler} 
-                    type="file"
-                    placeholder="Image"
-                    name="image"
-                    />
+                <input
+                className="text-input"
+                type="text"
+                placeholder="Description"
+                name="description"
+                onChange={changeHandler}
+                />
 
-                    <input 
-                    className="btn" 
-                    type="button" 
-                    value="Submit"
-                    onClick={submitcharacter} 
-                    />  
+                <input 
+                className="file-input" 
+                onChange={changeHandler} 
+                type="file"
+                placeholder="Image"
+                name="image"
+                />
 
-                </form>
-            </section>
-        </>
+                <input 
+                className="btn" 
+                type="button" 
+                value="Submit"
+                onClick={submitCharacter} 
+                />  
+
+        </section>
     )
 }
 

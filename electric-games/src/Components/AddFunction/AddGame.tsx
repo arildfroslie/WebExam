@@ -50,7 +50,6 @@ const AddGame = () => {
             rating,
             image
         };
-        console.log(game);
        await GameService.addGame(game);
     };
 
@@ -58,7 +57,6 @@ const AddGame = () => {
         if (image != null) {
             ImageUploadService.uploadImage(imageFile!);
         } 
-        console.log(imageFile?.name);
     }
 
     const submitGame = () => {
@@ -102,7 +100,7 @@ const AddGame = () => {
             /> 
 
             <input 
-            className="btn" 
+            className="file-input" 
             onChange={changeHandler} 
             type="file"
             placeholder="Image"

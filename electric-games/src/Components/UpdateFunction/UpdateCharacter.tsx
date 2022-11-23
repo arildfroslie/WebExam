@@ -3,13 +3,15 @@ import ICharacter from "../../interfaces/ICharacter";
 import CharacterService from "../../services/CharacterService";
 import { useLocation } from "react-router-dom";
 import { CharacterContext } from "../../context/CharacterContext";
+import ImageUploadService from "../../services/ImageUploadService";
 
 const UpdateCharacter = () => {
-    const [id, setId] = useState<string>("");
+    const [id, setId] = useState<number>();
     const [name, setName] = useState<string>("");
     const [game , setGame] = useState<string>("");
     const [description, setDescription] = useState<string>("");
     const [image, setImage] = useState<string>("");
+    const [imageFile, setImageFile] = useState<File | null>(null);
 
     const {pathname} = useLocation();
     const header = pathname.split("/")[1];
@@ -19,9 +21,11 @@ const UpdateCharacter = () => {
     const getCharacterFromService = async (id: number) => {
         console.log("I am trying to get:" + id);
         const character = await CharacterService.getCharacterById(id);
+        setId(character.id)
         setName(character.name);
         setGame(character.game);
         setDescription(character.description);
+        setImageFile(character.imageFile)
         setImage(character.image);
     };
 
@@ -36,7 +40,7 @@ const UpdateCharacter = () => {
         const { name, value } = e.target;
         switch (name) {
             case "id":
-                setId(value);
+                setId(id);
                 break;
             case "name":
                 setName(value);
@@ -44,15 +48,23 @@ const UpdateCharacter = () => {
             case "game":
                 setGame(value);
                 break;
+            case "image":
+                const {files} = e.target;
+                if (files != null) {
+                    const file = files[0]
+                setImageFile(file);
+                setImage(file.name)
+            }
+            break;
             case "description":
                 setDescription(value);
                 break;
         }
     };
 
-    const editcharacter = async () => {
+    const editCharacter = async () => {
         const character: ICharacter = {
-            id : parseInt(id),
+            id,
             name,
             image,
             game,
@@ -62,51 +74,65 @@ const UpdateCharacter = () => {
         window.location.reload();
     };
 
+    const uploadImage = async () => {
+        if (image != null) {
+            ImageUploadService.uploadImage(imageFile!);
+        } 
+    }
+
+    const submitChange = () => {
+        editCharacter();
+        uploadImage();
+
+    }
+
     return(
-        <>
-            <section className="update-container" id="update-character">
-                <label>Update a {header}:</label>
-                <div className="update-element">
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Name" 
-                    onChange={changeHandler}
-                    name='name'
-                    value={name}
-                    />
-                </div>
 
-                <div className="update-element">
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Game" 
-                    onChange={changeHandler}
-                    name='game'
-                    value={game}
-                    />
-                </div>
+        <section className="update-container" id="update-character">
+            <label>Update a {header}:</label>
 
-                <div className="update-element">
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Description" 
-                    onChange={changeHandler}
-                    name='description'
-                    value={description}
-                    />
-                </div>
+            <input 
+                className="text-input" 
+                type="text" 
+                placeholder="Name" 
+                onChange={changeHandler}
+                name='name'
+                value={name}
+            />
 
-                <div className="update-element">
-                    <button 
-                    className="btn" 
-                    onClick={editcharacter}>Save Changes</button>
-                </div>
+            <input 
+                className="text-input" 
+                type="text" 
+                placeholder="Game" 
+                onChange={changeHandler}
+                name='game'
+                value={game}
+            />
 
-            </section>
-        </>
+            <input 
+                className="text-input" 
+                type="text" 
+                placeholder="Description" 
+                onChange={changeHandler}
+                name='description'
+                value={description}
+            />
+
+            <input 
+                className="file-input" 
+                onChange={changeHandler} 
+                type="file"
+                placeholder="Image"
+                name="image"
+            />
+
+            <button 
+            className="btn-save" 
+            onClick={submitChange}>
+            Save Changes
+            </button>
+
+        </section>
     )
 };
 

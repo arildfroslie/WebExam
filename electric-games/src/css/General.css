@@ -9,12 +9,12 @@ body{
 
 /* Btn Styles */
 .btn{
-    width: 50%;
+    width: 35%;
     color: white;
-    height: 2rem;
+    height: 3rem;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 25%);
-    border: 1px solid white;
+    background-color: rgba(70, 161, 35, 75%);
+    border: 1px solid rgb(70, 161, 35);
     filter: blur(50%);
     margin-top: 5%;
     transition: transform 0.5s;
@@ -22,7 +22,7 @@ body{
 }
 
 .btn:hover{
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 

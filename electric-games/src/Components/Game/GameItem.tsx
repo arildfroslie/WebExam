@@ -1,7 +1,7 @@
 import { FC, useContext } from "react";
 import IGame from "../../interfaces/IGame";
-import DeleteFunction from "../DeleteFunction/DeleteFunction";
-import scrollFunction from "../UpdateFunction/ScrollFunction";
+import DeleteFunction from "../DeleteFunction/DeleteGame";
+import scrollFunction from "../ScrollFunction/ScrollFunction";
 import { GameContext } from "../../context/GameContext";
 
 const GameItem: FC<IGame> = ({id, name, image, platform, genre, rating }) => {

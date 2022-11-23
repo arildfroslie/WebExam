@@ -69,61 +69,68 @@ const UpdateGame = () => {
     };
 
     return(
-        <>
-            <section className="update-container" id="update-game">
-                <label>Update a {header}:</label>
-                <div className="update-element">
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Name" 
-                    onChange={changeHandler}
-                    name='name'
-                    value={name}
-                    />
-                </div>
+        <section className="update-container" id="update-game">
+            <label>Update a {header}:</label>
+            <div className="update-element">
+                <input 
+                className="text-input" 
+                type="text" 
+                placeholder="Name" 
+                onChange={changeHandler}
+                name='name'
+                value={name}
+                />
+            </div>
 
-                <div className="update-element">
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Platform" 
-                    onChange={changeHandler}
-                    name='platform'
-                    value={platform}
-                    />
-                </div>
+            <div className="update-element">
+                <input 
+                className="text-input" 
+                type="text" 
+                placeholder="Platform" 
+                onChange={changeHandler}
+                name='platform'
+                value={platform}
+                />
+            </div>
 
-                <div className="update-element">
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Genre" 
-                    onChange={changeHandler}
-                    name='genre'
-                    value={genre}
-                    />
-                </div>
+            <div className="update-element">
+                <input 
+                className="text-input" 
+                type="text" 
+                placeholder="Genre" 
+                onChange={changeHandler}
+                name='genre'
+                value={genre}
+                />
+            </div>
 
-                <div className="update-element">
-                    <input 
-                    className="text-input" 
-                    type="text" 
-                    placeholder="Rating"
-                    onChange={changeHandler} 
-                    name='rating'
-                    value={rating}
-                    />
-                </div>
+            <div className="update-element">
+                <input 
+                className="text-input" 
+                type="text" 
+                placeholder="Rating"
+                onChange={changeHandler} 
+                name='rating'
+                value={rating}
+                />
+            </div>
 
-                <div className="update-element">
-                    <button 
-                    className="btn-save" 
-                    onClick={editGame}>Save Changes</button>
-                </div>
+            <div className="update-element">
+            <input 
+                className="btn" 
+                onChange={changeHandler} 
+                type="file"
+                placeholder="Image"
+                name="image"
+                />
+            </div>
 
-            </section>
-        </>
+            <div className="update-element">
+                <button 
+                className="btn-save" 
+                onClick={editGame}>Save Changes</button>
+            </div>
+        </section>
     )
 };
 

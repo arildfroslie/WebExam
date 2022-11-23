@@ -1,8 +1,8 @@
 import { FC, useContext } from "react";
 import { CharacterContext } from "../../context/CharacterContext";
 import ICharacter from "../../interfaces/ICharacter";
-import DeleteFunction from "../DeleteFunction/DeleteFunction";
-import scrollFunction from "../UpdateFunction/ScrollFunction";
+import DeleteCharacter from "../DeleteFunction/DeleteCharacter";
+import scrollFunction from "../ScrollFunction/ScrollFunction";
 
 const CharacterItem: FC<ICharacter> = ({id, name, image, game, description }) => {
     const characterContext = useContext(CharacterContext);
@@ -13,7 +13,7 @@ const CharacterItem: FC<ICharacter> = ({id, name, image, game, description }) =>
             <img className="output-image"  src={`https://localhost:7119/images/${image}`} alt={name} />
             <p>{game}</p>
             <p>{description}</p>
-            <DeleteFunction id={id}/>
+            <DeleteCharacter id={id} />
             <button className="icon"onClick={() =>
                 {
                     scrollFunction("update-character")

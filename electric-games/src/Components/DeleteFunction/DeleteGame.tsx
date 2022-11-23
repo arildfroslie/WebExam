@@ -4,7 +4,7 @@ import IGameContext from "../../interfaces/IGameContext";
 import { FC } from "react";
 import IGame from "../../interfaces/IGame";
 
-const DeleteFunction: FC< Pick<IGame,"id">> = ({id}) => {
+const DeleteGame: FC< Pick<IGame,"id">> = ({id}) => {
     const {games, deleteGameById} = useContext(GameContext) as IGameContext;
 
     const deleteGame = () => {
@@ -21,4 +21,4 @@ const DeleteFunction: FC< Pick<IGame,"id">> = ({id}) => {
     )
 }
 
-export default DeleteFunction;
+export default DeleteGame;

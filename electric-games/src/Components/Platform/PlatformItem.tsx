@@ -1,8 +1,9 @@
 import { FC, useContext } from "react";
 import { PlatformContext } from "../../context/PlatformContext";
 import IPlatform from "../../interfaces/IPlatform";
-import DeleteFunction from "../DeleteFunction/DeleteFunction";
-import scrollFunction from "../UpdateFunction/ScrollFunction";
+import DeleteFunction from "../DeleteFunction/DeleteGame";
+import DeletePlatform from "../DeleteFunction/DeletePlatform";
+import scrollFunction from "../ScrollFunction/ScrollFunction";
 
 const PlatformItem: FC<IPlatform> = ({id, name, image, description }) => {
     const platformContext = useContext(PlatformContext);
@@ -12,7 +13,7 @@ const PlatformItem: FC<IPlatform> = ({id, name, image, description }) => {
             <h3>{name}</h3>
             <img className="output-image" src={`https://localhost:7119/images/${image}`} alt={name} />
             <p>{description}</p>
-            <DeleteFunction id={id}/>
+            <DeletePlatform id={id}/>
             <button className="icon" onClick={() =>
                 {
                     scrollFunction("update-platform")

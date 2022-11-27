@@ -19,6 +19,7 @@ body{
     margin-top: 5%;
     transition: transform 0.5s;
     cursor: pointer;
+    
 }
 
 .btn:hover{

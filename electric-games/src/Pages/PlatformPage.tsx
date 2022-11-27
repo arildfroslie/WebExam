@@ -14,7 +14,6 @@ const PlatformPage = () => {
                 <AddPlatform />
                 <UpdatePlatform />
             </div>
-            <Footer />
         </>
     )
 }

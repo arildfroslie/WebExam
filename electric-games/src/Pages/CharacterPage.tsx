@@ -13,7 +13,6 @@ const CharacterPage = () => {
                 <AddCharacter />
                 <UpdateCharacter />
             </div>
-            <Footer />
         </>
     )
 }

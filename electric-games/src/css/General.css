@@ -86,13 +86,11 @@ input[type="file"] {
 
 /* Navbar Style */
 .nav{
-    background-color: rgba(139, 90, 255);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     color: white;
-    gap: 2rem;
-    padding: -1rem;
     border-radius: 0 0 10px 10px ;
     position: fixed;
     z-index: 999;

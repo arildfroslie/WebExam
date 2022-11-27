@@ -3,7 +3,6 @@ import { CharacterContext } from "../../context/CharacterContext";
 import ICharacterContext from "../../interfaces/ICharacterContext";
 import { FC } from "react";
 import ICharacter from "../../interfaces/ICharacter";
-import CharacterService from "../../services/CharacterService";
 
 const DeleteCharacter: FC< Pick<ICharacter,"id">> = ({id}) => {
     const {characters, deleteCharacterById} = useContext(CharacterContext) as ICharacterContext;

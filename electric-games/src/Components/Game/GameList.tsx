@@ -10,6 +10,7 @@ const GameList = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const getGameItems = () => {
+    console.log(games);
     return games?.filter((game) => {
       if (!searchTerm) {
         return true

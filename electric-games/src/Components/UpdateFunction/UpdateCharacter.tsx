@@ -32,7 +32,6 @@ const UpdateCharacter = () => {
     useEffect(()=> {
         if (characterContext?.characterToEdit && characterContext.characterToEdit.id) {
             getCharacterFromService(characterContext?.characterToEdit.id)
-            
         }
     },[characterContext?.characterToEdit?.id]);
 

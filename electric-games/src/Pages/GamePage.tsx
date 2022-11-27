@@ -13,7 +13,6 @@ const GamePage = () => {
                 <AddGame />
                 <UpdateGame />
             </div>
-            <Footer />
             
         </>
     )

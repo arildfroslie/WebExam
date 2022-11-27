@@ -1,4 +1,4 @@
-@media screen and (max-width: 992px){
+@media screen and (min-width: 768px) and (max-width: 1000px){
     /* Button Style */
     .btn{
     height: 4rem;
@@ -8,8 +8,8 @@
     .delete-icon, .edit-icon{
         height: 2rem;
         margin: 5rem;
-        font-size: 2rem;
-        margin: 8rem 5rem;
+        font-size: 1.5rem;
+        margin: 8rem 3rem;
     }
     .add-icon{
         font-size: 2rem;

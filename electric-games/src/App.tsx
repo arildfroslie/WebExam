@@ -1,5 +1,6 @@
 import "./css/General.css"
 import "./css/Mobile.css"
+import "./css/Tablet.css"
 
 import {Navbar} from './components/Navbar/Navbar';
 

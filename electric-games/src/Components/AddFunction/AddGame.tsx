@@ -103,15 +103,18 @@ const AddGame = () => {
                 placeholder="Rating" 
                 name="rating"
                 onChange={changeHandler}
-            /> 
+            /> <br />
 
-            <input 
-                className="file-input" 
-                onChange={changeHandler} 
-                type="file"
-                placeholder="Image"
-                name="image"
-            />
+            <label className="file-input-label">
+                Press to Add Image
+                <input 
+                    className="file-input" 
+                    onChange={changeHandler} 
+                    type="file"
+                    placeholder="Image"
+                    name="image"
+                /> 
+            </label> <br />
 
             <input 
                 className="btn" 

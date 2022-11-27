@@ -50,7 +50,7 @@
     .output-item{
         grid-column: auto / span 12;
         margin-top: 5rem;
-        height: 150vh;
+        height: 170vh;
     }
     .output-header{
         font-size: 2rem;

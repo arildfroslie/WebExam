@@ -48,7 +48,7 @@
     .output-item{
         grid-column: auto / span 6;
         margin-top: 5rem;
-        height: 100vh;
+        height: 140vh;
     }
     .output-header{
         font-size: 2rem;

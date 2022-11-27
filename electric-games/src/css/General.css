@@ -171,7 +171,7 @@ input[type="file"] {
     border-radius: 2rem;
     box-shadow: 0 0 20px 0px #000000;
     background-image: linear-gradient(0deg, #569ce2 20%, #9a74bc 100%);
-    height: 60vh;
+    height: 70vh;
 }
 .output-header{
     margin-bottom: 0.5rem;

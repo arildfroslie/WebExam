@@ -50,13 +50,16 @@
     .output-item{
         grid-column: auto / span 12;
         margin-top: 5rem;
-        height: 1200px;
+        height: 150vh;
     }
     .output-header{
-        font-size: 3rem;
+        font-size: 2rem;
     }
     .output-p{
         font-size: 2rem;
+    }
+    .output-description{
+        font-size: 1.5rem;
     }
 
     /* Add Function Style */

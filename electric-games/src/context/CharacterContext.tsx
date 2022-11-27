@@ -30,10 +30,14 @@ const CharacterProvider = ({children} : Props) => {
     const addCharacter = async (character: ICharacter) => {
         await CharacterService.addCharacter(character);
     }
+
+    const getCharacterById = async (id: number) => {
+        await CharacterService.getCharacterById(id);
+    }
     
 
     return(
-        <CharacterContext.Provider value={{characters, characterToEdit, setCharacterToEdit, deleteCharacterById, addCharacter}}>
+        <CharacterContext.Provider value={{characters, characterToEdit, setCharacterToEdit, deleteCharacterById, addCharacter, getCharacterById}}>
             {children}
         </CharacterContext.Provider>
     )

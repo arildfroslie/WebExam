@@ -7,8 +7,12 @@ import IPlatform from "../../interfaces/IPlatform";
 const DeletePlatform: FC< Pick<IPlatform,"id">> = ({id}) => {
     const {platforms, deletePlatformById} = useContext(PlatformContext) as IPlatformContext;
 
+    const platform = platforms.find(thisPlatform => {
+        return thisPlatform.id === id;
+    });
+
     const deletePlatform = () => {
-        if (window.confirm("Are you sure you want to delete this?")) {
+        if (window.confirm("Are you sure you want to delete: " + platform?.name + "?")) {
             deletePlatformById(id!)
             window.location.reload();
         }

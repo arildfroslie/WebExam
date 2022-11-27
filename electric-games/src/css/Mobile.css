@@ -37,7 +37,7 @@
 
     /* Header Style */
     .header-title{
-        margin-top: 18%;
+        margin-top: 13%;
         font-size: 5rem;
     }
 
@@ -70,5 +70,26 @@
     }
     .add-header{
         font-size: 3rem;
+    }
+
+    /* HomePage Style */
+    .container-img{
+        margin: 2rem 2rem 2rem 0;
+    }
+
+    .video-container{
+        height: 60vh;
+        width: 100vw;
+    }
+    .video{
+        width: 80%;
+    }
+    .container-text{
+        grid-column: auto /span 12;
+        margin: 1rem 5rem;
+    }
+
+    .container-img{
+        display: none;
     }
 }

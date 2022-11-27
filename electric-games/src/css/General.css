@@ -5,6 +5,7 @@ body{
     font-family: 'Comic Neue', cursive;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, rgb(185, 147, 214), rgb(140, 166, 219));
+    scroll-behavior: smooth;
 }
 
 /* Btn Styles */
@@ -42,6 +43,7 @@ body{
     cursor: pointer;
     transition: transform 0.5s;
     font-size: 1rem;
+    color: white;
 }
 
 .add-icon{
@@ -135,6 +137,7 @@ input[type="file"] {
     font-size: 4rem;
     text-align: center;
     margin: 8% 0 0 0;
+    color: white;
 }
 
 /* Search Bar Style */
@@ -158,17 +161,17 @@ input[type="file"] {
 .output-container{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1.5rem;
+    grid-gap: 2rem;
     margin: 2rem;
+    color: white;
 }
 .output-item{
-    height: 100%;
-    width: 100%;
     grid-column: auto /span 3;
     text-align: center;
     border-radius: 2rem;
-    background-image: linear-gradient(0deg, #8EC5FC 0%, #E0C3FC 100%); 
     box-shadow: 0 0 20px 0px #000000;
+    background-image: linear-gradient(0deg, #569ce2 20%, #9a74bc 100%);
+    height: 60vh;
 }
 .output-header{
     margin-bottom: 0.5rem;
@@ -204,6 +207,7 @@ input[type="file"] {
 }
 .add-header{
     font-size: 4rem;
+    color: white;
 }
 .text-input{
     width: 80%;
@@ -217,6 +221,48 @@ input[type="file"] {
 /* Footer Style */
 .footer{
     text-align: center;
+    color: white;
 }
 
+/* Home Page Style */
+.video-container{
+    text-align: center;
+    height: 60vh;
+}
+.video{
+    border-radius: 2rem;
+    box-shadow: 0 0 20px 0px #000000;
+    width: 60%;
+    height: 100%;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+.container-text{
+    grid-column: auto /span 6;
+    margin: 2rem 0 2rem 5rem;
+    color:white;
+}
+.container-img{
+    grid-column: auto /span 6;
+    margin: 0 2rem 2rem 0;
+    text-align: center;
+}
+.container-text h3{
+    font-size: 4rem;
+    margin: 0;
+}
+.container-text p{
+    font-size: 1.5rem;
+}
+
+.img{
+    width: 60%;
+}
+
+.footer{
+    color: black;
+}
 

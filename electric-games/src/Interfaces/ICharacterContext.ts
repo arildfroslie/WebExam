@@ -6,6 +6,7 @@ interface ICharacterContext {
     addCharacter: (character: ICharacter) => void;
     characterToEdit: ICharacter | null;
     setCharacterToEdit: (character: ICharacter | null) => any;
+    getCharacterById: (id: number) => void;
 }
 
 export default ICharacterContext;

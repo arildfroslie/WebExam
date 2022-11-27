@@ -5,6 +5,7 @@ body{
     font-family: 'Comic Neue', cursive;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, rgb(185, 147, 214), rgb(140, 166, 219));
+    scroll-behavior: smooth;
 }
 
 /* Btn Styles */
@@ -16,15 +17,21 @@ body{
     background-color: rgba(70, 161, 35, 75%);
     border: 1px solid rgb(70, 161, 35);
     filter: blur(50%);
-    margin-top: 5%;
     transition: transform 0.5s;
     cursor: pointer;
-    
+    margin-bottom: 2rem;
 }
 
 .btn:hover{
     transform: scale(1.2);
 }
+.enter-button{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}       
 
 
 /* Icon Styles */
@@ -34,9 +41,9 @@ body{
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: white;
     transition: transform 0.5s;
     font-size: 1rem;
+    color: white;
 }
 
 .add-icon{
@@ -61,27 +68,41 @@ body{
     color: yellow;
 }
 
+/* File Submit style */
+input[type="file"] {
+    display: none;
+}
+.file-input-label{
+    display: block;
+    margin:  2rem auto;
+    width: 80%;
+    text-align: center;
+    padding: 1rem 0;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+
 /* Navbar Style */
 .nav{
-    background-color: rgb(139, 90, 255);
+    background-color: rgba(139, 90, 255);
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    color: white;
     gap: 2rem;
     padding: -1rem;
-    color: white;
     border-radius: 0 0 10px 10px ;
     position: fixed;
     z-index: 999;
     width: 100%;
     top: 0%;
 }
-
 .logo{
     font-size: 2rem;
     margin: 1rem;
 }
-
 .nav ul{
     padding: 0;
     margin: 0;
@@ -90,7 +111,6 @@ body{
     display: flex;
     gap: 1rem;
 }
-
 .nav a{
     color: inherit;
     text-decoration: none;
@@ -116,8 +136,8 @@ body{
 .header-title{  
     font-size: 4rem;
     text-align: center;
-    color: white;
     margin: 8% 0 0 0;
+    color: white;
 }
 
 /* Search Bar Style */
@@ -127,8 +147,6 @@ body{
     align-items: center;
     margin-bottom: 1rem;
 }
-
-
 .search-bar{
     width: 70%;
     height: 2rem;
@@ -139,24 +157,21 @@ body{
     font-size: 2rem;
 }
 
-
 /* Output Style */
 .output-container{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1.5rem;
+    grid-gap: 2rem;
     margin: 2rem;
+    color: white;
 }
-
 .output-item{
-    height: 100%;
-    width: 100%;
     grid-column: auto /span 3;
     text-align: center;
     border-radius: 2rem;
-    background-image: linear-gradient(0deg, #8EC5FC 0%, #E0C3FC 100%);
-    color: white;    
     box-shadow: 0 0 20px 0px #000000;
+    background-image: linear-gradient(0deg, #569ce2 20%, #9a74bc 100%);
+    height: 60vh;
 }
 .output-header{
     margin-bottom: 0.5rem;
@@ -166,8 +181,15 @@ body{
     height:50%;
     border-radius: 2rem;
 }
-.output-p{
+.output-p, .output-description{
     margin: 0;
+}
+.output-p{
+    font-size: 1.2rem;
+}
+.output-description{
+    font-size: small;
+    margin: 0 3rem;
 }
 
 /* Add/Update Style*/
@@ -187,14 +209,60 @@ body{
     font-size: 4rem;
     color: white;
 }
-.text-input, .file-input{
+.text-input{
     width: 80%;
     height: 4rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     margin: 2rem 0 0 0;
     background-color: white;
-
 }
 
+/* Footer Style */
+.footer{
+    text-align: center;
+    color: white;
+}
+
+/* Home Page Style */
+.video-container{
+    text-align: center;
+    height: 60vh;
+}
+.video{
+    border-radius: 2rem;
+    box-shadow: 0 0 20px 0px #000000;
+    width: 60%;
+    height: 100%;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+.container-text{
+    grid-column: auto /span 6;
+    margin: 2rem 0 2rem 5rem;
+    color:white;
+}
+.container-img{
+    grid-column: auto /span 6;
+    margin: 0 2rem 2rem 0;
+    text-align: center;
+}
+.container-text h3{
+    font-size: 4rem;
+    margin: 0;
+}
+.container-text p{
+    font-size: 1.5rem;
+}
+
+.img{
+    width: 60%;
+}
+
+.footer{
+    color: black;
+}
 

@@ -2,6 +2,7 @@ import GameList from "../components/Game/GameList";
 import Header from "../components/Header/Header";
 import UpdateGame from "../components/UpdateFunction/UpdateGame";
 import AddGame from "../components/AddFunction/AddGame";
+import Footer from "../components/Footer/Footer";
 
 const GamePage = () => {
     return(
@@ -12,6 +13,7 @@ const GamePage = () => {
                 <AddGame />
                 <UpdateGame />
             </div>
+
             
         </>
     )

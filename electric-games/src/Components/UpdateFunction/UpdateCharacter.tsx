@@ -121,18 +121,21 @@ const UpdateCharacter = () => {
                 value={description}
             />
 
-            <input 
-                className="file-input" 
-                onChange={changeHandler} 
-                type="file"
-                placeholder="Image"
-                name="image"
-            />
+            <label className="file-input-label">
+                Press to Add Image
+                <input 
+                    className="file-input" 
+                    onChange={changeHandler} 
+                    type="file"
+                    placeholder="Image"
+                    name="image"
+                /> 
+            </label> <br />
 
             <button 
-            className="btn" 
-            onClick={submitChange}>
-            Save Changes
+                className="btn" 
+                onClick={submitChange}>
+                Save Changes
             </button>
 
         </section>

@@ -8,7 +8,7 @@ const DeleteCharacter: FC< Pick<ICharacter,"id">> = ({id}) => {
     const {characters, deleteCharacterById} = useContext(CharacterContext) as ICharacterContext;
 
     const deleteCharacter = () => {
-        if (window.confirm("Are you sure you want to delete this?")) {
+        if (window.confirm("Are you sure you want to delete: ")) {
             deleteCharacterById(id!)
             window.location.reload();
         }

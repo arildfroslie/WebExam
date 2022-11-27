@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px){
+@media screen and (min-width: 768px) and (max-width: 1000px){
     /* Button Style */
     .btn{
     height: 4rem;
@@ -8,8 +8,8 @@
     .delete-icon, .edit-icon{
         height: 2rem;
         margin: 5rem;
-        font-size: 2rem;
-        margin: 8rem 5rem;
+        font-size: 1.5rem;
+        margin: 8rem 3rem;
     }
     .add-icon{
         font-size: 2rem;
@@ -41,22 +41,26 @@
         font-size: 5rem;
     }
 
-    /* SearchBar Style */
-
     /* Output Style */
     .output-container{
         margin-top: 0;
     }
     .output-item{
-        grid-column: auto / span 12;
+        grid-column: auto / span 6;
         margin-top: 5rem;
         height: 1200px;
     }
     .output-header{
         font-size: 3rem;
     }
+    .output-image{  
+        height: 40%;
+    }
     .output-p{
         font-size: 2rem;
+    }
+    .output-description{
+        font-size: 1rem;
     }
 
     /* Add Function Style */

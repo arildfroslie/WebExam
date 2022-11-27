@@ -62,49 +62,52 @@ const AddCharacter = () => {
     return(
         <section className="add-container" id="add-function">
 
-                <label
+            <label
                 className="add-header"
                 >Add a {header}:
-                </label>
+            </label>
 
-                <input 
+            <input 
                 className="text-input" 
                 type="text" 
                 placeholder="Name"
                 name="name"
                 onChange={changeHandler}
-                />
+            />
 
-                <input
+            <input
                 className="text-input"
                 type="text"
                 placeholder="Game"
                 name="game"
                 onChange={changeHandler}
-                />
+            />
 
-                <input
+            <input
                 className="text-input"
                 type="text"
                 placeholder="Description"
                 name="description"
                 onChange={changeHandler}
-                />
+            />
 
+            <label className="file-input-label">
+                Press to Add Image
                 <input 
-                className="file-input" 
-                onChange={changeHandler} 
-                type="file"
-                placeholder="Image"
-                name="image"
-                />
+                    className="file-input" 
+                    onChange={changeHandler} 
+                    type="file"
+                    placeholder="Image"
+                    name="image"
+                /> 
+            </label> <br />
 
-                <input 
+            <input 
                 className="btn" 
                 type="button" 
                 value="Submit"
                 onClick={submitCharacter} 
-                />  
+            />  
 
         </section>
     )

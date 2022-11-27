@@ -12,7 +12,7 @@ const CharacterItem: FC<ICharacter> = ({id, name, image, game, description }) =>
             <h3 className="output-header">{name}</h3>
             <img className="output-image"  src={`https://localhost:7119/images/${image}`} alt={name} />
             <p className="output-p">{game}</p>
-            <p className="output-p">{description}</p>
+            <p className="output-description">{description}</p>
             <DeleteCharacter id={id} />
             <button className="edit-icon"onClick={() =>
                 {

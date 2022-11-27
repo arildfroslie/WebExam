@@ -12,7 +12,7 @@ const PlatformItem: FC<IPlatform> = ({id, name, image, description }) => {
         <article className="output-item">
             <h3 className="output-header">{name}</h3>
             <img className="output-image" src={`https://localhost:7119/images/${image}`} alt={name} />
-            <p className="output-p">{description}</p>
+            <p className="output-description">{description}</p>
             <DeletePlatform id={id}/>
             <button className="edit-icon" onClick={() =>
                 {

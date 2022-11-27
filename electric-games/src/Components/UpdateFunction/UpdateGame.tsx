@@ -99,55 +99,58 @@ const UpdateGame = () => {
 
 
             <input 
-            className="text-input" 
-            type="text" 
-            placeholder="Name" 
-            onChange={changeHandler}
-            name='name'
-            value={name}
+                className="text-input" 
+                type="text" 
+                placeholder="Name" 
+                onChange={changeHandler}
+                name='name'
+                value={name}
             />
 
             <input 
-            className="text-input" 
-            type="text" 
-            placeholder="Platform" 
-            onChange={changeHandler}
-            name='platform'
-            value={platform}
+                className="text-input" 
+                type="text" 
+                placeholder="Platform" 
+                onChange={changeHandler}
+                name='platform'
+                value={platform}
             />
 
             <input 
-            className="text-input" 
-            type="text" 
-            placeholder="Genre" 
-            onChange={changeHandler}
-            name='genre'
-            value={genre}
+                className="text-input" 
+                type="text" 
+                placeholder="Genre" 
+                onChange={changeHandler}
+                name='genre'
+                value={genre}
             />
 
 
             <input 
-            className="text-input" 
-            type="text" 
-            placeholder="Rating"
-            onChange={changeHandler} 
-            name='rating'
-            value={rating}
+                className="text-input" 
+                type="text" 
+                placeholder="Rating"
+                onChange={changeHandler} 
+                name='rating'
+                value={rating}
             />
 
-            <input 
-            className="file-input" 
-            onChange={changeHandler} 
-            type="file"
-            placeholder="Image"
-            name="image"
-            />
+            <label className="file-input-label">
+                Press to Add Image
+                <input 
+                    className="file-input" 
+                    onChange={changeHandler} 
+                    type="file"
+                    placeholder="Image"
+                    name="image"
+                /> 
+            </label> <br />
 
 
             <button 
-            className="btn" 
-            onClick={submitChange}>
-            Save Changes
+                className="btn" 
+                onClick={submitChange}>
+                Save Changes
             </button>
 
         </section>

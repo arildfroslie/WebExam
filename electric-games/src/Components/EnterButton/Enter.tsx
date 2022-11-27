@@ -1,10 +1,13 @@
 const Enter = () => {
 
+    const hideButton = () => {
+
     return (
         <div className="enter-button">
-            <button className="btn-enter">Enter</button>
+            <a href="/" className="btn-enter">Enter</a>
         </div>
     )
-};
+    };
+}
 
 export default Enter;

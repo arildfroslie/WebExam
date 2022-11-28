@@ -13,8 +13,7 @@ const GamePage = () => {
                 <AddGame />
                 <UpdateGame />
             </div>
-
-            
+         
         </>
     )
 }

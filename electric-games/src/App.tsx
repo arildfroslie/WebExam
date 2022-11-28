@@ -10,7 +10,6 @@ function App() {
   return (
     <>
     <Navbar/>
-    <Enter />
     <Footer />
     </>
   );

@@ -37,11 +37,9 @@
 
     /* Header Style */
     .header-title{
-        margin-top: 18%;
+        margin-top: 13%;
         font-size: 5rem;
     }
-
-    /* SearchBar Style */
 
     /* Output Style */
     .output-container{
@@ -50,13 +48,16 @@
     .output-item{
         grid-column: auto / span 12;
         margin-top: 5rem;
-        height: 1200px;
+        height: 170vh;
     }
     .output-header{
-        font-size: 3rem;
+        font-size: 2rem;
     }
     .output-p{
         font-size: 2rem;
+    }
+    .output-description{
+        font-size: 1.5rem;
     }
 
     /* Add Function Style */
@@ -70,5 +71,26 @@
     }
     .add-header{
         font-size: 3rem;
+    }
+
+    /* HomePage Style */
+    .container-img{
+        margin: 2rem 2rem 2rem 0;
+    }
+
+    .video-container{
+        height: 60vh;
+        width: 100vw;
+    }
+    .video{
+        width: 80%;
+    }
+    .container-text{
+        grid-column: auto /span 12;
+        margin: 1rem 5rem;
+    }
+
+    .container-img{
+        display: none;
     }
 }

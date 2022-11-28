@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using ElectricGamesApi.Models;
 using ElectricGamesApi.Context;
 
 var builder = WebApplication.CreateBuilder(args);

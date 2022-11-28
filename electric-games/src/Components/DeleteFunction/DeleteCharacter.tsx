@@ -7,8 +7,13 @@ import ICharacter from "../../interfaces/ICharacter";
 const DeleteCharacter: FC< Pick<ICharacter,"id">> = ({id}) => {
     const {characters, deleteCharacterById} = useContext(CharacterContext) as ICharacterContext;
 
+    const character = characters.find(thisCharacter => {
+        return thisCharacter.id === id;
+    });
+
     const deleteCharacter = () => {
-        if (window.confirm("Are you sure you want to delete: ")) {
+        
+        if (window.confirm("Are you sure you want to delete: " + character?.name + "?")) {
             deleteCharacterById(id!)
             window.location.reload();
         }

@@ -1,4 +1,4 @@
-@media screen and (min-width: 768px) and (max-width: 1000px){
+@media screen and (min-width: 769px) and (max-width: 1199px){
     /* Button Style */
     .btn{
     height: 4rem;
@@ -38,7 +38,7 @@
     /* Header Style */
     .header-title{
         margin-top: 18%;
-        font-size: 5rem;
+        font-size: 6rem;
     }
 
     /* Output Style */
@@ -48,16 +48,16 @@
     .output-item{
         grid-column: auto / span 6;
         margin-top: 5rem;
-        height: 1200px;
+        height: 140vh;
     }
     .output-header{
-        font-size: 3rem;
+        font-size: 2rem;
     }
     .output-image{  
         height: 40%;
     }
     .output-p{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .output-description{
         font-size: 1rem;
@@ -74,5 +74,14 @@
     }
     .add-header{
         font-size: 3rem;
+    }
+
+    /* HomePage Style */
+    .container-img{
+        margin: 2rem 2rem 2rem 0;
+    }
+
+    .video-container{
+        height: 50vh;
     }
 }

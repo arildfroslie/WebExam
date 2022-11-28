@@ -7,8 +7,12 @@ import IGame from "../../interfaces/IGame";
 const DeleteGame: FC< Pick<IGame,"id">> = ({id}) => {
     const {games, deleteGameById} = useContext(GameContext) as IGameContext;
 
+    const game = games.find(thisGame => {
+        return thisGame.id === id;
+    });
+
     const deleteGame = () => {
-        if (window.confirm("Are you sure you want to delete this?")) {
+        if (window.confirm("Are you sure you want to delete: " + game?.name + "?")) {
             deleteGameById(id!)
             window.location.reload();
         }
